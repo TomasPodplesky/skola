@@ -1,0 +1,44 @@
+Rastrová x Vektorová grafika
+-Rastrová
+rastrová je grafika která dělá pixely
+formáty
+.png .jpg .jpeg .bmp .raw .gif .tiff
+-Vektorová
+vektorová grafika pracuje s vektorama
+
+Rastrová
+čím je tvořen obrázek?
+pixely
+každý bod má svou barvu
+PPI-pixels per inch
+DPI-dots per inch
+Velikost je definována
+-velikostí(šírkou a výškou)
+-rozlišením(hustotou pixelů)
+-DPI
+-barevnou hloubkou
+
+
+Prezentace
+sdělování informacií s využitím slovních i obrazových prostředků
+skládá se ze snímků
+přechod mezi snímky-časování/kliknutím
+při prechodu jsou možné efekty
+-Faktory úspěchu
+odobrnost, vizuální dojem
+příprava místnosti/techniky
+verbální dovednost
+shrnutí prezentace na konci
+přiměřená délka
+Zásady
+použití kontrastních barev
+pozadí tmavé, text světlý
+text velkým písmem, bezpatkově
+jeden snímek max 10 řádků
+text heslovitý
+jednotný grafický styl
+Obrázky
+dostatečně velké
+grafy, schémata, obrázky,
+Editory
+microsoft powerpoint, open office impress/libre office impress

@@ -1,0 +1,302 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+
+\geometry{margin=2.5cm}
+
+% Barvy – dark mode
+\definecolor{primary}{RGB}{220, 60, 60}
+\definecolor{secondary}{RGB}{180, 80, 80}
+\definecolor{highlight}{RGB}{40, 10, 10}
+\definecolor{boxbg}{RGB}{35, 20, 20}
+\definecolor{darkbg}{RGB}{18, 18, 18}
+\definecolor{textmain}{RGB}{230, 220, 210}
+\definecolor{textdim}{RGB}{160, 150, 140}
+
+% Nadpisy
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{primary}}{}{0em}{}
+
+% Záhlaví/zápatí
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{primary}{\textit{Romeo a Julie – studijní poznámky}}}
+\lhead{\textcolor{primary}{W. Shakespeare}}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Prostředí pro důležité informace
+\tcbuselibrary{skins}
+\newtcolorbox{dulez}{
+  colback=boxbg,
+  colframe=primary,
+  coltitle=white,
+  coltext=textmain,
+  fonttitle=\bfseries,
+  title=⚠ Důležité,
+  arc=4pt
+}
+\newtcolorbox{citace}{
+  colback=darkbg!80!black,
+  colframe=secondary,
+  coltext=textmain,
+  fonttitle=\bfseries\itshape,
+  arc=4pt,
+  left=8pt
+}
+\newtcolorbox{tip}{
+  colback=darkbg!80!black,
+  colframe=blue!60!black,
+  coltitle=white,
+  coltext=textmain,
+  fonttitle=\bfseries,
+  title=💡 K zapamatování,
+  arc=4pt
+}
+
+\begin{document}
+\pagecolor{darkbg}
+\color{textmain}
+
+% Titulní strana
+\begin{center}
+  {\Huge \textbf{\textcolor{primary}{Romeo a Julie}}}\\[0.3em]
+  {\large \textit{William Shakespeare}}\\[0.2em]
+  {\normalsize \textcolor{textdim}{Studijní poznámky na test}}\\[1em]
+  \rule{\linewidth}{1pt}
+\end{center}
+
+% ============================================================
+\section{Autor – William Shakespeare}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Narozen:} 23. dubna 1564, Stratford-upon-Avon, Anglie
+  \item \textbf{Zemřel:} 23. dubna 1616, Stratford-upon-Avon
+  \item \textbf{Období:} Renesance (anglická renesance, alžbětinské divadlo)
+  \item \textbf{Hlavní působiště:} Londýn, divadlo \textbf{Globe Theatre}
+  \item \textbf{Povolání:} dramatik, básník, herec, spolumajitel divadla
+\end{itemize}
+
+\subsection{Dílo Shakespeara (přehled)}
+
+\begin{tabular}{ll}
+  \toprule
+  \textbf{Kategorie} & \textbf{Příklady} \\
+  \midrule
+  Tragédie & Hamlet, Othello, Macbeth, Král Lear, \textbf{Romeo a Julie} \\
+  Komedie & Sen noci svatojánské, Zkrocení zlé ženy, Benátský kupec \\
+  Historické hry & Richard III., Julius Caesar, Jindřich IV. \\
+  Sonety & 154 sonetů (slavný sonet č. 18: „Mám tě přirovnat k letnímu dni?") \\
+  \bottomrule
+\end{tabular}
+
+% ============================================================
+\section{Základní informace o díle}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Žánr:} \textbf{tragédie} (přesněji: romantická / milostná tragédie)
+  \item \textbf{Vznik:} cca \textbf{1594–1596}
+  \item \textbf{Původní název:} \textit{The Most Excellent and Lamentable Tragedy of Romeo and Juliet}
+  \item \textbf{Předloha:} italská novela \textit{Luigi da Porta} (1530), poté zpracoval \textit{Matteo Bandello}; anglicky převedl \textit{Arthur Brooke} v básni \textit{The Tragicall Historye of Romeus and Juliet} (1562)
+  \item \textbf{Místo děje:} \textbf{Verona} (Itálie), krátce Mantova
+  \item \textbf{Čas děje:} neurčitě – renesanční Itálie
+  \item \textbf{Forma:} drama psané převážně \textbf{blankversem} (nerýmovaný pětistopý jambický verš), částečně próza, prolog jako sonet
+\end{itemize}
+
+\begin{dulez}
+  Romeo a Julie je považována za \textbf{nejslavnější milostnou tragédii} světové literatury.
+  Ústřední téma: \textbf{láska vs. nenávist, osud, smrt jako důsledek rodové nenávisti}.
+\end{dulez}
+
+% ============================================================
+\section{Postavy}
+
+\subsection{Hlavní postavy}
+
+\begin{tabular}{>{\bfseries}p{3.5cm} p{10cm}}
+  \toprule
+  Postava & Popis \\
+  \midrule
+  Romeo Montague & Syn Montaguů, mladík zamilovaný nejdříve do Rosalindy, pak do Julie. Vznětlivý, romantický, impulzivní. \\[0.3em]
+  Julie Capuletová & Dcera Capuletů, 13 let, inteligentní, odhodlaná, v lásce statečnější než Romeo. \\[0.3em]
+  Mercutio & Romeův přítel, vtipný a ironický, zemře v souboji s Tybaltem. \\[0.3em]
+  Tybalt & Bratranec Julie, bojovný, nenávidí Montaguovy, zabije Mercutia. \\[0.3em]
+  Friar Lawrence & Mnich, oddá Romea a Julii tajně, vymyslí záchranný plán s jedem. \\[0.3em]
+  Chůva & Juliin důvěrník, pomáhá milencům se scházet, komická postava. \\[0.3em]
+  Paris & Šlechtic, navrhovaný ženich Julie, zabit Romeem. \\[0.3em]
+  Kníže Escales & Vládce Verony, snaží se zastavit boje rodin. \\[0.3em]
+  Lord/Lady Capulet & Juliini rodiče, chtějí ji provdat za Parise. \\[0.3em]
+  Lord/Lady Montague & Romeovi rodiče. \\
+  \bottomrule
+\end{tabular}
+
+% ============================================================
+\section{Děj – stručně po aktech}
+
+\subsection{Prolog}
+Sbor (Chorus) přednáší sonet – oznamuje, že oba milenci zahynou a teprve jejich smrt usmíří rodiny.
+
+\begin{citace}
+„Z krve dvou nepřátelských rodů stejně vznešených / zrodí se pár nešťastných milenců, / jejichž smrt pohřbí rodičovský hněv."
+\end{citace}
+
+\subsection{Akt I – Seznámení}
+\begin{itemize}[leftmargin=1.5em]
+  \item Ulice Verony: rvačka mezi sluhy Capuletů a Montaguů → kníže varuje pod trestem smrti.
+  \item Romeo je smutný – zamilován do \textbf{Rosalindy}, která ho odmítá.
+  \item Capuletové pořádají \textbf{maškarní ples}; Romeo se vloupá (aby viděl Rosalindu).
+  \item Na plese se \textbf{Romeo setká s Julií} – okamžitá láska, nevědí, kdo druhý je.
+  \item Zjistí, že jsou z nepřátelských rodin.
+\end{itemize}
+
+\subsection{Akt II – Milostná scéna, tajný sňatek}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Balkonová scéna} – Romeo pod Juliiným balkónem, vyznání lásky.
+  \item Julie: \textit{„Co je jméno? To, čemu říkáme růže, / vonět by stejně vonelo i jinak."}
+  \item Romeo a Julie se \textbf{tajně vezmou} u Friara Lawrence.
+  \item Chůva zprostředkovává komunikaci.
+\end{itemize}
+
+\subsection{Akt III – Tragický zvrat}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Tybalt} vyvolá souboj s Romeem → Romeo odmítá (Tybalt je nyní jeho příbuzný).
+  \item Mercutio bojuje za Romea → \textbf{Tybalt zabije Mercutia}.
+  \item Romeo v hněvu \textbf{zabije Tybalta}.
+  \item Kníže vyhostí Romea z Verony (\textbf{exil do Mantovy}).
+  \item Rodiče chtějí provdat Julii za Parise → Julie zoufá.
+\end{itemize}
+
+\subsection{Akt IV – Plán s jedem}
+\begin{itemize}[leftmargin=1.5em]
+  \item Friar Lawrence dá Julii \textbf{uspávací nápoj} – bude vypadat mrtvá po 42 hodin.
+  \item Plán: Romeo dostane zprávu, přijde do hrobky, Julie se probudí.
+  \item Julie vypije nápoj v předvečer svatby s Parisem → nalezena „mrtvá".
+  \item Pohřeb Julie v hrobce Capuletů.
+\end{itemize}
+
+\subsection{Akt V – Tragický konec}
+\begin{itemize}[leftmargin=1.5em]
+  \item Zpráva k Romeovi \textbf{nedorazí včas} (posel byl zadržen).
+  \item Romeo slyší jen o Juliině smrti → koupí jed, spěchá do Verony.
+  \item U hrobky zabije Parise, vejde dovnitř.
+  \item Vidí „mrtvou" Julii → \textbf{vypije jed a zemře}.
+  \item Julie se probudí, vidí mrtvého Romea → \textbf{probodne se jeho dýkou}.
+  \item Rodiny Montaguů a Capuletů se nad mrtvými usmíří.
+\end{itemize}
+
+\begin{tip}
+  Klíčový motiv: \textbf{osud a náhoda} – vše by bylo jinak, kdyby zpráva dorazila včas.
+  Shakespeare záměrně ukazuje, jak malá náhoda může zničit životy.
+\end{tip}
+
+% ============================================================
+\section{Témata a motivy}
+
+\begin{tabular}{>{\bfseries}p{4cm} p{9cm}}
+  \toprule
+  Téma & Vysvětlení \\
+  \midrule
+  Láska & Čistá, absolutní láska překonávající vše – ale i sebezničující \\
+  Nenávist a konflikt & Rodová nenávist jako zdroj tragédie \\
+  Osud a náhoda & „Hvězdami prokletí milenci" – předurčenost záhuby \\
+  Čas & Vše se odehrává velmi rychle (5 dní) – důraz na intenzitu \\
+  Smrt & Smrt jako únik, ale i jako důsledek slepé nenávisti \\
+  Rodina vs. jedinec & Konflikty povinnosti vůči rodině a osobní svobody \\
+  Dospívání & Julie dospěje z dívky ve statečnou ženu \\
+  \bottomrule
+\end{tabular}
+
+% ============================================================
+\section{Literární forma a jazyk}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Blankvers} – nerýmovaný jambický pentametr (základní forma)
+  \item \textbf{Sonet} – prolog i scéna setkání Romea a Julie jsou ve formě sonetu
+  \item \textbf{Próza} – komické postavy (chůva, sloužící)
+  \item \textbf{Oxymóron} – hojně využíván: „milující nenávist", „chladný oheň", „nemocné zdraví"
+  \item \textbf{Metafora, přirovnání} – Julie jako slunce, Romeo jako poutník
+  \item \textbf{Dramatická ironie} – divák ví více než postavy (Julie není mrtvá)
+\end{itemize}
+
+\begin{citace}
+\textbf{Slavné citáty:}\\[0.5em]
+„Romeo, Romeo, proč jsi Romeo?" – Julie (II, 2)\\
+„Co je jméno? Růže..." – Julie (II, 2)\\
+„Pár hvězdami prokletých milenců." – Prolog\\
+„Ó, jsem štěstěnou posměšný blázen!" – Romeo (III, 1)
+\end{citace}
+
+% ============================================================
+\section{Historický a kulturní kontext}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Renesance} – návrat k antickým ideálům, individualismus, humanismus
+  \item \textbf{Alžbětinské divadlo} – Globe Theatre, jen mužští herci (i ženské role), žádné kulisy
+  \item Dílo reflektuje \textbf{rodové spory} typické pro středověkou Itálii
+  \item Téma \textbf{aranžovaných sňatků} – Julie byla zasnoubena Parisovi bez vlastní vůle
+  \item \textbf{Vendetty} – italský zvyk krevní msty
+\end{itemize}
+
+% ============================================================
+\section{Zpracování v kultuře}
+
+\begin{tabular}{ll}
+  \toprule
+  \textbf{Dílo} & \textbf{Autor / rok} \\
+  \midrule
+  Opera \textit{Roméo et Juliette} & Charles Gounod, 1867 \\
+  Balet \textit{Romeo a Julie} & Sergej Prokofjev, 1935 \\
+  Muzikál \textit{West Side Story} & Leonard Bernstein / Stephen Sondheim, 1957 \\
+  Film \textit{Romeo + Juliet} & Baz Luhrmann, 1996 (s L. DiCapriem) \\
+  Film \textit{Romeo and Juliet} & Franco Zeffirelli, 1968 \\
+  \bottomrule
+\end{tabular}
+
+% ============================================================
+\section{Rychlá příprava na test – shrnutí}
+
+\begin{tcolorbox}[colback=highlight, colframe=primary, coltitle=white, coltext=textmain, title=\textbf{Co si určitě zapamatovat}, fonttitle=\bfseries]
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Autor:} William Shakespeare, anglická renesance, 1564–1616
+  \item \textbf{Vznik:} cca 1594–1596, Globe Theatre v Londýně
+  \item \textbf{Žánr:} romantická/milostná tragédie, drama, blankvers
+  \item \textbf{Místo:} Verona (Itálie), krátce Mantova
+  \item \textbf{Rodiny:} \textbf{Montague} (Romeo) vs. \textbf{Capulet} (Julie)
+  \item \textbf{Klíčové postavy:} Romeo, Julie, Mercutio, Tybalt, Friar Lawrence, Chůva
+  \item \textbf{Tragický zvrat:} Tybalt zabije Mercutia → Romeo zabije Tybalta → exil
+  \item \textbf{Záchranný plán selže:} zpráva nedorazí → Romeo vypije jed, Julie se probodne
+  \item \textbf{Morální poselství:} nenávist ničí i nevinné; rodiny se usmiřují až nad mrtvými
+  \item \textbf{Hlavní témata:} láska, osud, nenávist, smrt, čas, konflikt rodiny a jedince
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{1em}
+
+\begin{tcolorbox}[colback=darkbg!80!black, colframe=blue!60!black, coltitle=white, coltext=textmain, title=\textbf{Časová osa – 5 dní děje}, fonttitle=\bfseries]
+\begin{tabular}{>{\bfseries}cl}
+  Neděle & Ples u Capuletů – setkání Romea a Julie \\
+  Neděle (noc) & Balkonová scéna, slib lásky \\
+  Pondělí & Tajný sňatek; smrt Mercutia a Tybalta; Romeo vyhoštěn \\
+  Úterý & Romeo odjíždí do Mantovy; rodiče chtějí provdat Julii \\
+  Středa & Julie vypije lektvar; pohřeb \\
+  Čtvrtek (noc) & Romeo v hrobce → smrt obou milenců \\
+\end{tabular}
+\end{tcolorbox}
+
+\vspace{2em}
+\begin{center}
+  \textcolor{textdim}{\small Poznámky sestaveny pro studijní účely · \textit{Romeo a Julie} · W. Shakespeare}
+\end{center}
+
+\end{document}

@@ -1,0 +1,154 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\section*{Laboratorní protokol: Měření Youngova modulu pružnosti v ohybu}
+
+\section{Zadání}
+Cílem práce je určit Youngův modul pružnosti $E$ špagety pro tři různé délky za pomoci měření průhybu $d$ způsobeného zatížením z několika kancelářských sponek.
+
+\section{Teoretický úvod}
+Pro průhyb konce zkoumaného nosníku, který je na jednom konci pevně upnutý (vetknutý) a na druhém konci zatížený silou $F$, platí vztah:
+\begin{equation}
+d = \frac{F l^3}{3 E I_{z}}
+\end{equation}
+kde $l$ je volná délka špagety, $E$ je její Youngův modul pružnosti a $I_{z}$ je kvadratický moment průřezu. Protože má špageta kruhový průřez s poloměrem $R$, můžeme za $I_z$ dosadit zjednodušený vzorec $I_{z} = \frac{\pi R^4}{4}$. 
+
+Když tyto dvě rovnice spojíme a vyjádříme z nich Youngův modul, dostaneme vzorec pro výpočet:
+\begin{equation}
+E = \frac{4 F l^3}{3 \pi d R^4}
+\end{equation}
+
+\section{Pomůcky a podmínky}
+Měřili jsme při běžné pokojové teplotě.
+\begin{itemize}
+    \item Volné špagety
+    \item Milimetrový papír (chyba papíru $\Delta l = \Delta d = 0,5$\,mm)
+    \item Závaží z kancelářských sponek (jedna sponka má $m = 0,45$\,g)
+    \item Špendlíky na připevnění k papíru
+    \item provázek
+\end{itemize}
+
+\section{Postup měření}
+Nejdříve jsme museli změřit posuvným měřítkem poloměr tloušťky špagety. Pak jsme část špagety připevnili sponkami k papíru tak, aby koukala stanovená volná délka ($l$). Na tento konec jsme pak věšeli závaží pomocí provázku. Na milimetrovém papíru za špagetou jsme odečítali, o kolik milimetrů se špageta prohne směrem dolů. Měření jsme zopakovali na třech různých délkách špagety ($102$\,mm, $76$\,mm a $56$\,mm).
+
+\section{Naměřené hodnoty}
+Poloměr špagety byl $R = (0,75 \pm 0,25)$\,mm. Jedna sponka měla hmotnost $m_1 = 0,45$\,g. 
+
+\begin{table}[H]
+\centering
+\caption{Délka špagety $l_1 = 102$\,mm}
+\vspace{2mm}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Sponky} & \textbf{$m$ [g]} & \textbf{$d$ [mm]} & \textbf{$F$ [N]} & \textbf{$E$ [GPa]} \\
+\hline \hline
+1  & 0,45 & 3,0  & 0,0044 & 2,09 \\ \hline
+2  & 0,90 & 4,0  & 0,0088 & 3,14 \\ \hline
+3  & 1,35 & 5,0  & 0,0132 & 3,77 \\ \hline
+4  & 1,80 & 6,0  & 0,0177 & 4,19 \\ \hline
+5  & 2,25 & 8,0  & 0,0221 & 3,93 \\ \hline
+6  & 2,70 & 9,5  & 0,0265 & 3,97 \\ \hline
+7  & 3,15 & 11,0 & 0,0309 & 4,00 \\ \hline
+8  & 3,60 & 12,0 & 0,0353 & 4,19 \\ \hline
+9  & 4,05 & 13,5 & 0,0397 & 4,19 \\ \hline
+10 & 4,50 & 14,5 & 0,0441 & 4,33 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Délka špagety $l_2 = 76$\,mm}
+\vspace{2mm}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Sponky} & \textbf{$m$ [g]} & \textbf{$d$ [mm]} & \textbf{$F$ [N]} & \textbf{$E$ [GPa]} \\
+\hline \hline
+1  & 0,45 & 1,5 & 0,0044 & 1,73 \\ \hline
+2  & 0,90 & 2,5 & 0,0088 & 2,08 \\ \hline
+3  & 1,35 & 3,0 & 0,0132 & 2,60 \\ \hline
+4  & 1,80 & 4,0 & 0,0177 & 2,60 \\ \hline
+5  & 2,25 & 4,5 & 0,0221 & 2,89 \\ \hline
+6  & 2,70 & 5,0 & 0,0265 & 3,12 \\ \hline
+7  & 3,15 & 6,0 & 0,0309 & 3,03 \\ \hline
+8  & 3,60 & 7,5 & 0,0353 & 2,77 \\ \hline
+9  & 4,05 & 8,0 & 0,0397 & 2,92 \\ \hline
+10 & 4,50 & 9,0 & 0,0441 & 2,89 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Délka špagety $l_3 = 56$\,mm}
+\vspace{2mm}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Sponky} & \textbf{$m$ [g]} & \textbf{$d$ [mm]} & \textbf{$F$ [N]} & \textbf{$E$ [GPa]} \\
+\hline \hline
+1  & 0,45 & 0,0  & 0,0044 & {-} \\ \hline
+2  & 0,90 & 1,5  & 0,0088 & 1,39 \\ \hline
+3  & 1,35 & 2,0  & 0,0132 & 1,56 \\ \hline
+4  & 1,80 & 3,0  & 0,0177 & 1,39 \\ \hline
+5  & 2,25 & 3,5  & 0,0221 & 1,49 \\ \hline
+6  & 2,70 & 4,0  & 0,0265 & 1,56 \\ \hline
+7  & 3,15 & 4,25 & 0,0309 & 1,71 \\ \hline
+8  & 3,60 & 4,5  & 0,0353 & 1,85 \\ \hline
+9  & 4,05 & 5,0  & 0,0397 & 1,87 \\ \hline
+10 & 4,50 & 5,5  & 0,0441 & 1,89 \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Výpočty}
+
+\subsection{Youngův modul pružnosti $E_1$ (pro 102 mm)}
+Dosadíme do vzorce z úvodu (pro 10 sponek na délce $102$\,mm, viz první tabulka):
+$$ F = 4,50 \cdot 10^{-3} \cdot 9,81 = 0,0441\,\text{N} $$
+$$ E_{10} = \frac{4 \cdot 0,0441 \cdot (0,102)^3}{3 \cdot \pi \cdot 0,0145 \cdot (0,00075)^4} \approx 4,33 \cdot 10^9\,\text{Pa} $$
+Potom jsme udělali prostý aritmetický průměr všech 10 vypočtených modulů z první tabulky, čímž nám vyšlo průměrné $E_1 = 3,78$\,GPa.
+
+\vspace{5mm}
+\textbf{Výpočet chyby $E_1$:} Použijeme metodu relativních chyb. Chybu tíhového zrychlení zanedbáme, ale započítáme chybu váhy $10$ sponek ($\Delta m = 0,1$\,g na $m = 4,5$\,g). Relativní chyba je součet dílčích nejistot zlomku:
+$$ \frac{\Delta E}{E} = \frac{\Delta m}{m} + 3\frac{\Delta l}{l} + \frac{\Delta d}{d} + 4\frac{\Delta R}{R} $$
+Dosadíme hodnoty pro běžné průměrné výchylky (kde je $d \approx 8,5$\,mm, chyba odhadu $R$ byla $\pm 0,25$\,mm):
+$$ \frac{\Delta E_1}{E_1} = \frac{0,1}{4,5} + 3 \cdot \frac{0,5}{102} + \frac{0,5}{8,5} + 4 \cdot \frac{0,25}{0,75} \approx 0,022 + 0,015 + 0,059 + 1,333 \approx 1,43 \quad (143\,\%) $$
+Absolutní chyba průměrného modulu $E_1 \approx 3,78$\,GPa:
+$$ \Delta E_1 \approx 3,78 \cdot 1,43 \approx 5,4\,\text{GPa} $$
+\textbf{Chyba:} Výsledná chyba po započtení váhy vzrostla na $143\,\%$, drtivou většinu ale pořád tvoří to, že se ve vzorci umocňuje poloměr $R$ na čtvrtou. Absolutně to dělá $\pm 5,4$\,GPa. \\
+\textbf{Výsledek:} $E_1 = (3,8 \pm 5,4)$\,GPa.
+
+\subsection{Youngův modul pružnosti $E_2$ (pro 76 mm)}
+Stejným postupem získáme nejdříve průměrnou hodnotu modulu pružnosti pro druhou délku:
+$$ E_2 = 2,66\,\text{GPa} $$
+
+\vspace{5mm}
+\textbf{Výpočet chyby $E_2$:} Do stejného vzorce pro relativní chybu dosadíme hodnoty odpovídající druhému měření (kde je průměrný průhyb $d \approx 4,5$\,mm a $l = 76$\,mm, chyba váhy zůstává stejná):
+$$ \frac{\Delta E_2}{E_2} = \frac{0,1}{4,5} + 3 \cdot \frac{0,5}{76} + \frac{0,5}{4,5} + 4 \cdot \frac{0,25}{0,75} \approx 0,022 + 0,020 + 0,111 + 1,333 \approx 1,49 \quad (149\,\%) $$
+Absolutní chyba průměrného modulu $E_2 \approx 2,66$\,GPa:
+$$ \Delta E_2 \approx 2,66 \cdot 1,49 \approx 4,0\,\text{GPa} $$
+\textbf{Chyba:} Zde chyba stoupla na $149\,\%$ hlavně kvůli menšímu průměrnému průhybu $d$. Absolutně to dělá $\pm 4,0$\,GPa. \\
+\textbf{Výsledek:} $E_2 = (2,7 \pm 4,0)$\,GPa.
+
+\subsection{Youngův modul pružnosti $E_3$ (pro 56 mm)}
+Aritmetický průměr z hodnot ve třetí tabulce dává výsledek modulu:
+$$ E_3 = 1,63\,\text{GPa} $$
+
+\vspace{5mm}
+\textbf{Výpočet chyby $E_3$:} Hodnoty z třetího měření (kde je průměrný průhyb $d \approx 3,0$\,mm a $l = 56$\,mm):
+$$ \frac{\Delta E_3}{E_3} = \frac{0,1}{4,5} + 3 \cdot \frac{0,5}{56} + \frac{0,5}{3,0} + 4 \cdot \frac{0,25}{0,75} \approx 0,022 + 0,027 + 0,167 + 1,333 \approx 1,55 \quad (155\,\%) $$
+Absolutní chyba průměrného modulu $E_3 \approx 1,63$\,GPa:
+$$ \Delta E_3 \approx 1,63 \cdot 1,55 \approx 2,5\,\text{GPa} $$
+\textbf{Chyba:} U nejkratší špagety roste relativní chyba čtení z pravítka na průhybu natolik, že celková chyba vyskočila na $155\,\%$. Absolutně to dělá $\pm 2,5$\,GPa. \\
+\textbf{Výsledek:} $E_3 = (1,6 \pm 2,5)$\,GPa.
+
+\section{Závěr}
+Měření nám ukázalo, že průměrný Youngův modul pružnosti rostl společně s délkou špagety. Krátké špagety vykázaly jen zhruba $1,63$\,GPa, zatímco ta nejdelší ($3,8 \pm 5,4$\,GPa). Teorie totiž počítá čistě s průhybem a zanedbává tak smykovou deformaci, která se u krátkých nosníků kriticky projeví, navíc upnutí špendlíky k papíru nebylo zdaleka dokonale pevné. Chyba měření narostla na obrovská čísla (přes $140\,\%$), protože jsme nedovedli extrémně přesně zjistit průměr tlusté špagety, a tento odhad se ve vzorci umocňoval na čtvrtou. Těchto dominujicích $133\,\%$ s přehledem přebilo i vloženou nepřesnost našich vah ($2\,\%$).
+\end{document}

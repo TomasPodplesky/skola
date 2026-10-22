@@ -1,0 +1,8 @@
+**/node_modules/
+**/Fyzika-CD-vyuka/
+**/Software/
+**/.git/
+**/.vscode/
+**/.micropico/
+**/dist/
+**/build/

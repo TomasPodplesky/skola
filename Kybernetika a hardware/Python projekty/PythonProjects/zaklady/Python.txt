@@ -1,0 +1,10 @@
+Python
+
+random
+    #poznámky
+
+Komandy
+    "print()" = napíše něco  funkce: "print(Hello world)" = v konzoli: Hello World
+    Proměnná    "a =" =  funkce: a = "ahoj"   "a" = "ahoj"  
+    "round()" funkce: "round(5.7)" výsledek 6
+    "int()" funkce: "int(5.6)" zaokrouhlí na nižší celé číslo

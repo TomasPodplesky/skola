@@ -1,0 +1,22 @@
+TEF
+pasivní elektrotechnické souèástky
+1) rezistor (odpor)
+    proè se to mám uèit? kde se používá?
+    1) všude
+    2)varná konvice
+    3)topení
+    4)boiler
+    5)prùtokový ohøívaè
+    6)fén
+    7)žárovka
+    8)žehlièka
+
+    základní vlastnosti el. odporu¨
+    ve støídavém obvodu: není fázový posun U a I
+
+    použítí
+    a)snížit velikost elektrického proudu I = U/R
+    b)úbytek napìtí U = I*R
+    c) výkon rezistoru P = U*I
+
+    
