@@ -145,6 +145,18 @@ System.out.println(dny[0]);         // Vypíše: Pondělí
 System.out.println(dny.length);     // Vypíše: 3 (vlastnost vracející velikost pole)
 ```
 ## 8. Třída Math
+Obsahuje základní matematické funkce a konstanty jako statické metody. Nemusí se importovat (součást balíčku `java.lang`).
+
+- `Math.PI` – Ludolfovo číslo ($\pi \approx 3{,}14159$)
+- `Math.E` – Eulerovo číslo ($e \approx 2{,}71828$)
+- `Math.sqrt(double a)` – druhá odmocnina ($\sqrt{a}$)
+- `Math.pow(double a, double b)` – mocnina ($a^b$)
+- `Math.abs(x)` – absolutní hodnota ($|x|$)
+- `Math.round(x)` – zaokrouhlení na nejbližší celé číslo
+- `Math.floor(x)` – zaokrouhlení dolů
+- `Math.ceil(x)` – zaokrouhlení nahoru
+- `Math.min(a, b)` / `Math.max(a, b)` – minimum / maximum ze dvou hodnot
+- `Math.random()` – pseudonáhodné číslo z intervalu $\langle 0{,}0; 1{,}0)$
 
 ## 9. Práce s textovými řetězci (String)
 
@@ -183,3 +195,165 @@ char b = a.charAt(2); // b = 'o'
 
 ### Náhrada znaků
 - `String replace(char co, char čím)` – nahradí všechny výskyty zadaného znaku za nový znak.
+
+---
+
+## 10. Objektově orientované programování (OOP)
+
+### 10.1 Myšlenka OOP
+V objektově orientovaném programování vytváříme programy, které **simulují skutečný nebo námi vymyšlený svět**.
+- Čím je simulace přesnější, tím je výsledný program dokonalejší.
+- Všechny simulované světy jsou ve skutečnosti **světy objektů**, které mají různé **vlastnosti** (data / stav) a **schopnosti** (chování / funkce) a které spolu navzájem komunikují.
+
+---
+
+### 10.2 Základní pilíře OOP
+
+#### 1. Zapouzdření (Encapsulation)
+- Zaručuje, že objekt **nemůže přímo přistupovat dovnitř jiných objektů**, abychom ani omylem neovlivnili chod některé jeho vnitřní části.
+- Umožňuje před okolím **skrývat vnitřní stav (atributy) a pomocné metody** objektu.
+- Rozdělení na dvě roviny:
+  - **Rozhraní (Interface):** Množina veřejných informací a metod, které o sobě třída zveřejní vnějšímu světu.
+  - **Implementace:** Konkrétní způsob vnitřního naprogramování skrytý před vnějším zásahem.
+
+#### 2. Dědičnost (Inheritance)
+- Vytváříme nové třídy (**potomky**) tak, aby zdědily všechny vlastnosti a schopnosti předka (**rodiče**) a přidaly k nim své vlastní specifické chování nebo vlastnosti.
+- V Javě se dědí pomocí klíčového slova `extends`.
+- **Příklad:** `Hodiny` (rodič / předek) $\rightarrow$ `Budik` (potomek, který dědí měření času a přidává funkci buzení / zvonění).
+
+#### 3. Polymorfismus (Mnohotvárnost)
+- Různé objekty na **stejný podnět (volání stejné metody) reagují různě**.
+- Objekty poskytují svému okolí stejnou službu (stejný název metody), ale každý objekt při jejím vyvolání provede specifickou akci odpovídající svému typu.
+- **Příklad:** Metoda `vykresli()` – pro instanci `Kruh` vykreslí kružnici, pro instanci `Ctverec` vykreslí čtverec.
+
+---
+
+### 10.3 Základní pojmy
+
+| Pojem | Definice / Význam |
+| :--- | :--- |
+| **Objekt** | Jednotlivý prvek modelované reality. Má v sobě definované vlastnosti (stav) a schopnosti (chování). |
+| **Třída (`class`)** | Popis skupiny podobných objektů. Slouží jako **šablona (vzor)** pro vytváření objektů. |
+| **Instance** | Konkrétní objekt vytvořený v paměti na základě dané třídy (např. třída je `Kruh`, instance je konkrétní kruh `k1`). |
+| **Zpráva** | Prostředek, pomocí kterého spolu objekty komunikují (v praxi jde o volání metody na objektu, např. `objekt.akce()`). |
+| **Metoda** | Část programu (funkce třídy), která se vykoná v reakci na obdrženou zprávu. |
+
+---
+
+### 10.4 Vytvoření nové třídy a její syntaxe
+
+Definice třídy se skládá z modifikátoru přístupu, klíčového slova `class` a identifikátoru:
+
+```java
+public class NazevTridy {
+    // 1. Atributy (stav)
+    // 2. Konstruktory (inicializace)
+    // 3. Metody (chování)
+}
+```
+
+- **Modifikátor přístupu:** Určuje, kdo smí s třídou / prvkem pracovat:
+  - `public` – veřejný přístup (odkudkoliv).
+  - `private` – soukromý přístup (pouze zevnitř dané třídy – základ zapouzdření).
+- **`class`:** Klíčové slovo deklarující třídu.
+- **Identifikátor (Název třídy):**
+  - Podléhá konvenci **PascalCase** (začíná velkým písmenem, např. `MojeTrida`, `Kruh`).
+  - U veřejné třídy (`public class`) se název třídy **musí přesně shodovat s názvem souboru** (`NazevTridy.java`).
+
+---
+
+### 10.5 Atributy (Vlastnosti objektu)
+Atributy jsou proměnné definované uvnitř třídy, které popisují stav objektu.
+
+**Dělení atributů:**
+1. **Atributy instance:**
+   - Každá vytvořená instance má **svoji vlastní nezávislou hodnotu** tohoto atributu v paměti.
+   - Příklad: Poloměr kruhu `r` – kruh `k1` má $r = 5$, kruh `k2` má $r = 12$.
+2. **Atribut třídy (statický atribut – `static`):**
+   - **Sdílený atribut** pro všechny instance dané třídy.
+   - Existuje pouze v jedné kopii v paměti a všechny instance k němu mají přístup se stejnou hodnotou.
+   - Příklad: Počítadlo celkového počtu vytvořených instancí `static int pocetKruhu;`.
+
+---
+
+### 10.6 Vytvoření instance a konstruktor
+
+Instanci třídy vytváříme zavoláním speciální metody zvané **konstruktor** pomocí operátoru **`new`**:
+
+$$\text{NázevTřídy} \quad \text{názevProměnné} = \mathbf{new} \quad \text{NázevTřídy}(\text{parametry});$$
+
+```java
+Kruh k = new Kruh(3);
+```
+
+- **Konstruktor:** Speciální metoda třídy, která se jmenuje stejně jako třída, nemá žádný návratový typ (ani `void`) a slouží k inicializaci nově vytvořeného objektu.
+- **Co konstruktor udělá:** Vytvoří instanci v dynamické paměti a **vrátí odkaz (referenci)**, pomocí kterého s instancí dále v programu pracujeme.
+
+---
+
+### 10.7 Instance vs. Odkaz (Paměťový model: Halda a Garbage Collector)
+
+V Javě se striktně rozlišuje mezi samotným objektem a odkazem na něj:
+
+1. **Uložení v paměti (Halda vs. Zásobník):**
+   - **Instance (Objekt):** Je fyzicky alokována v dynamické paměti zvané **halda (heap)**.
+   - **Odkaz (Reference):** Proměnná (např. `k`), která je uložena na **zásobníku (stack)** a obsahuje pouze adresu / ukazatel na místo v haldě, kde se skutečný objekt nachází.
+
+2. **Správa paměti a Garbage Collector (GC):**
+   - O haldu se stará automatický správce paměti JVM – **Garbage Collector (GC)**. Nikdo jiný do přímé správy haldy nemá přístup.
+   - **Funkce GC:**
+     - **Přiděluje paměť** nově vznikajícím objektům při volání `new`.
+     - **Automaticky ruší nepotřebné objekty** a uvolňuje paměť – jakmile na objekt v haldě již nevede žádný aktivní odkaz (např. proměnná zanikla nebo byla nastavena na `null`), GC tento objekt z haldy bezpečně odstraní.
+
+---
+
+### 10.8 Souhrnný příklad: Třída Kruh
+
+Ukázka kompletní implementace třídy podle probraných slajdů:
+
+```java
+// Soubor: Kruh.java
+public class Kruh {
+    // 1. Atribut instance (zapouzdřený - private)
+    private double polomer;
+
+    // 2. Atribut třídy (sdílený pro všechny kruhy - static)
+    private static int pocetKruhu = 0;
+
+    // 3. Konstruktor pro vytvoření instance (volán přes 'new Kruh(r)')
+    public Kruh(double polomer) {
+        this.polomer = polomer;
+        pocetKruhu++;
+    }
+
+    // 4. Metoda instance (veřejné rozhraní)
+    public double spoctiObsah() {
+        return Math.PI * polomer * polomer;
+    }
+
+    public double getPolomer() {
+        return polomer;
+    }
+
+    // Statická metoda třídy
+    public static int getPocetKruhu() {
+        return pocetKruhu;
+    }
+}
+```
+
+Použití v hlavní třídě:
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Vytvoření instance na haldě a uložení odkazu do 'k1'
+        Kruh k1 = new Kruh(3.0);
+        
+        // Komunikace pomocí zprávy (volání metody)
+        System.out.println("Poloměr: " + k1.getPolomer());
+        System.out.println("Obsah: " + k1.spoctiObsah());
+        System.out.println("Vytvořeno kruhů: " + Kruh.getPocetKruhu());
+    }
+}
+```
+
