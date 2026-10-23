@@ -357,3 +357,153 @@ public class Main {
 }
 ```
 
+---
+
+## 11. Přetěžování metod a konstruktorů (Overloading)
+
+### 11.1 Co je přetěžování
+Přetěžování (**Overloading**) je schopnost třídy definovat více metod nebo konstruktorů se **stejným názvem**, ale s **rozdílným seznamem parametrů** (rozdílnou signaturou).
+
+- **Typ polymorfismu:** Jedná se o **statický polymorfismus** (řešený v době překladu – *compile-time*).
+- **Princip:** Překladač (kompilátor) v okamžiku volání sám vybere správnou metodu podle počtu, typu a pořadí předaných argumentů.
+
+---
+
+### 11.2 Signatura metody (Method Signature)
+Kompilátor identifikuje metody výhradně podle jejich **signatury**.
+
+$$\text{Signatura metody} = \text{Název metody} + \text{Seznam typů parametrů (počet, typy a jejich pořadí)}$$
+
+#### Co TVOŘÍ signaturu:
+1. **Název metody** (např. `vypocitej`)
+2. **Počet parametrů** (např. 2 vs. 3)
+3. **Datové typy parametrů** (např. `int` vs. `double`)
+4. **Pořadí datových typů parametrů** (např. `(int, String)` vs. `(String, int)`)
+
+#### Co NETVOŘÍ signaturu (Kritická pravidla):
+- **Návratový typ metody:** Změna návratového typu **není** přetížením. Pokud mají dvě metody shodný název i parametry a liší se pouze návratovým typem (např. jedna vrací `void` a druhá `int`), kód **neprojde překladem** (*Compile Error: method already defined*).
+- **Modifikátory přístupu:** Změna z `public` na `private` nebo přidání `static` signaturu nemění.
+- **Názvy parametrů:** Názvy proměnných v hlavičce metody kompilátor ignoruje. `secti(int a, int b)` a `secti(int x, int y)` mají totožnou signaturu.
+
+```java
+// PLATNÉ PŘETÍŽENÍ:
+public void tiskni(int cislo) { ... }
+public void tiskni(String text) { ... }
+public void tiskni(int x, int y) { ... }
+public void tiskni(String text, int pocet) { ... }
+public void tiskni(int pocet, String text) { ... }
+
+// NEPLATNÉ PŘETÍŽENÍ (Chyba při kompilaci!):
+public int tiskni(int cislo) { return cislo; } // Kolize s tiskni(int cislo) - návratový typ se nepočítá!
+public void tiskni(int a) { ... }               // Kolize s tiskni(int cislo) - jiný název parametru nestačí!
+```
+
+---
+
+### 11.3 Přetěžování konstruktorů (Constructor Overloading)
+V OOP se přetěžování nejčastěji uplatňuje u **konstruktorů**. Umožňuje instanciovat objekt různými způsoby – například zadáním všech parametrů, pouze části z nich, nebo bez parametrů s dosazením výchozích (defaultních) hodnot.
+
+#### Zřetězení konstruktorů (`this(...)`)
+Aby nedocházelo k duplicitnímu kódu při inicializaci atributů (porušení principu DRY – *Don't Repeat Yourself*), používá se volání jednoho konstruktoru z druhého pomocí klíčového slova **`this(...)`**.
+
+> [!IMPORTANT]
+> **Pravidlo pro `this(...)`:** Volání jiného konstruktoru přes `this(...)` musí být **striktně prvním příkazem** v těle konstruktoru. Před ním nesmí být žádný jiný řádek kódu.
+
+#### Příklad: Třída Obdelnik s přetíženými konstruktory
+Levý horní roh je definován bodem $[x, y]$, rozměry tvoří šířka $a$ a výška $b$.
+
+```java
+public class Obdelnik {
+    private int a, b, x, y;
+    private String barva;
+    private static final int DEFAULT_KROK = 10;
+
+    // 1. Bezparametrický konstruktor: nastaví výchozí pozici, rozměry i barvu
+    public Obdelnik() {
+        this(0, 0, DEFAULT_KROK * 5, DEFAULT_KROK * 3, "cervena");
+    }
+
+    // 2. Částečný konstruktor: pozice a rozměry, barva se použije implicitní
+    public Obdelnik(int x, int y, int a, int b) {
+        this(x, y, a, b, "cervena");
+    }
+
+    // 3. Částečný konstruktor: pouze rozměry (počátek v [0, 0])
+    public Obdelnik(int a, int b) {
+        this(0, 0, a, b, "cervena");
+    }
+
+    // 4. Plný parametrický konstruktor (centrální inicializační bod)
+    public Obdelnik(int x, int y, int a, int b, String barva) {
+        if (a <= 0 || b <= 0) {
+            throw new IllegalArgumentException("Rozměry stran a, b musí být kladné!");
+        }
+        this.x = x;
+        this.y = y;
+        this.a = a;
+        this.b = b;
+        this.barva = barva;
+    }
+}
+```
+
+Použití v kódu:
+```java
+// Volá konstruktor č. 1 (výchozí hodnoty)
+Obdelnik o1 = new Obdelnik(); 
+
+// Volá konstruktor č. 3 (šířka 40, výška 20, pozice [0, 0])
+Obdelnik o2 = new Obdelnik(40, 20); 
+
+// Volá konstruktor č. 4 (plná specifikace)
+Obdelnik o3 = new Obdelnik(15, 25, 100, 50, "modra"); 
+```
+
+---
+
+### 11.4 Srovnání: Přetěžování (Overloading) vs. Překrývání (Overriding)
+
+Tento rozdíl je zásadní koncepční otázkou OOP:
+
+| Kritérium | Přetěžování (**Overloading**) | Překrývání (**Overriding**) |
+| :--- | :--- | :--- |
+| **Kde k němu dochází** | V rámci **jedné třídy** (případně děděním dalších variant). | Mezi **rodičem a potomkem** (dědičnost). |
+| **Signatura metody** | **Musí být odlišná** (jiné parametry). | **Musí být zcela shodná** (stejný název i parametry). |
+| **Návratový typ** | Může být libovolný (nemá vliv). | Musí být shodný (nebo kovariantní podtyp). |
+| **Druh polymorfismu** | **Statický** (překladový / compile-time). | **Dynamický** (běhový / runtime). |
+| **Anotace v kódu** | Žádná. | `@Override` |
+| **Účel** | Poskytnout více způsobů volání stejné logiky. | Předefinovat nebo upravit chování předka v potomkovi. |
+
+---
+
+### 11.5 Automatická typová konverze při přetěžování
+Pokud kompilátor nenajde přesnou shodu v datových typech parametrů, zkusí provést **implicitní typovou konverzi (widening)** směrem k většímu typu:
+
+$$\text{byte} \rightarrow \text{short} \rightarrow \text{int} \rightarrow \text{long} \rightarrow \text{float} \rightarrow \text{double}$$
+
+**Příklad:**
+```java
+public class Test {
+    public static void vypis(double d) {
+        System.out.println("Double: " + d);
+    }
+    
+    public static void vypis(int i) {
+        System.out.println("Int: " + i);
+    }
+
+    public static void main(String[] args) {
+        vypis(5);    // Zavolá přesnou shodu: vypis(int)
+        vypis(5.5);  // Zavolá přesnou shodu: vypis(double)
+        
+        short s = 2;
+        vypis(s);    // Neexistuje vypis(short) -> rozšíří se na nejbližší: vypis(int)
+    }
+}
+```
+
+> [!WARNING]
+> **Nejednoznačné volání (Ambiguous Method Call):**
+> Pokud kompilátor nedokáže jednoznačně určit, která přetížená metoda má přednost (např. kvůli kombinaci implicitních konverzí nebo varargs), zahlásí chybu:
+> `reference to ... is ambiguous, both method ... match`. V takovém případě je nutné parametr explicitně přetypovat, např. `metoda((double) x)`.
+
