@@ -1,10 +1,20 @@
-	 # Otázka 03: Booleova algebra a logické funkce
 
-- logické funkce
-- pravidla Booleovy algebry a její využití
-- karnaughovy mapy a minimalizace
+## Obsah
 
----
+- [[#1. Logické funkce a jejich vlastnosti|1. Logické funkce a jejich vlastnosti]]
+  - [[#Základní logické funkce|Základní logické funkce]]
+- [[#2. Vyjádření logické funkce|2. Vyjádření logické funkce]]
+  - [[#Pravdivostní tabulkou|Pravdivostní tabulkou]]
+  - [[#V úplném disjunktním tvaru (ÚDT)|V úplném disjunktním tvaru (ÚDT)]]
+    - [[#Milanův tahák (příklady zápisu výrazů pro logickou 1)|Milanův tahák (příklady zápisu výrazů pro logickou 1)]]
+- [[#3. Booleova algebra|3. Booleova algebra]]
+  - [[#Základní zákony|Základní zákony]]
+  - [[#Základní axiomy a kompletní pravidla|Základní axiomy a kompletní pravidla]]
+  - [[#Příklad algebraické minimalizace|Příklad algebraické minimalizace]]
+- [[#4. Karnaughova mapa (K-mapa)|4. Karnaughova mapa (K-mapa)]]
+  - [[#Struktura Karnaughovy mapy|Struktura Karnaughovy mapy]]
+  - [[#Postup minimalizace pomocí Karnaughovy mapy|Postup minimalizace pomocí Karnaughovy mapy]]
+  - [[#Příklad|Příklad]]
 
 ## 1. Logické funkce a jejich vlastnosti
 

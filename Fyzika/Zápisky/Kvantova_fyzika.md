@@ -1,5 +1,56 @@
 # Kvantová fyzika
 
+## Tahák vzorců
+
+| Vzorec                                                                      | Název                                  | Vypočítáme                                   |
+| --------------------------------------------------------------------------- | -------------------------------------- | -------------------------------------------- |
+| $E=h\nu=\hbar\omega$                                                        | Planckův–Einsteinův vztah              | energii fotonu                               |
+| $c=\lambda\nu$                                                              | Vlnová rovnice                         | vlnovou délku nebo frekvenci                 |
+| $\lambda=\frac{h}{p}$                                                       | de Broglieova rovnice                  | vlnovou délku částice                        |
+| $L=m_evr=n\hbar$                                                            | Bohrův kvantovací vztah                | moment hybnosti elektronu                    |
+| $m_e\frac{v^2}{r}=\frac{Ze^2}{4\pi\varepsilon_0r^2}$                        | Rovnováha Coulombovy a dostředivé síly | rychlost nebo poloměr dráhy                  |
+| $r_n=\frac{\varepsilon_0h^2}{\pi m_eZe^2}n^2$                               | Bohrův poloměr dráhy                   | poloměr n-té dráhy                           |
+| $E_n=-\frac{m_ee^4Z^2}{8\varepsilon_0^2h^2n^2}$                             | Energie hladin vodíku                  | energii hladiny                              |
+| $\Delta E=\lvert E_{n_1}-E_{n_2} \rvert=h\nu=\frac{hc}{\lambda}$            | Přechod mezi energetickými hladinami   | energii, frekvenci nebo vlnovou délku fotonu |
+| $\rho=\lvert \Psi \rvert^2$                                                 | Bornova interpretace                   | hustotu pravděpodobnosti                     |
+| $\Delta x\,\Delta p_x\ge\frac{\hbar}{2}$                                    | Polohově-hybnostní relace neurčitosti  | mez neurčitosti polohy a hybnosti            |
+| $\Delta E\,\Delta t\ge\frac{\hbar}{2}$                                      | Časově-energetická relace neurčitosti  | mez neurčitosti energie a času               |
+| $M_{e\lambda}=\frac{2\pi hc^2}{\lambda^5}\frac{1}{e^{hc/(\lambda k_BT)}-1}$ | Planckův zákon                         | spektrální zářivost                          |
+| $T\lambda_{\max}=b$                                                         | Wienův posunovací zákon                | teplotu nebo vlnovou délku maxima záření     |
+| $M_e=\varepsilon\sigma T^4$                                                 | Stefanův–Boltzmannův zákon             | plošnou hustotu vyzářeného toku              |
+
+## Obsah
+
+- [[#Tahák vzorců|Tahák vzorců]]
+- [[#Souhrn konstant a vzorců (Tahák)|Souhrn konstant a vzorců (Tahák)]]
+  - [[#🔴 Základní konstanty|🔴 Základní konstanty]]
+  - [[#🔵 Klíčové vzorce a vztahy|🔵 Klíčové vzorce a vztahy]]
+- [[#1. Základní postuláty a principy kvantové fyziky|1. Základní postuláty a principy kvantové fyziky]]
+  - [[#Kontrast světů|Kontrast světů]]
+  - [[#Pět základních pilířů mikrosvěta:|Pět základních pilířů mikrosvěta:]]
+- [[#2. Bohrův model atomu vodíku|2. Bohrův model atomu vodíku]]
+  - [[#Odvození poloměru a energie hladin|Odvození poloměru a energie hladin]]
+    - [[#1. Kvantovací podmínka momentu hybnosti:|1. Kvantovací podmínka momentu hybnosti:]]
+    - [[#2. Silová rovnováha (Coulombova a dostředivá síla):|2. Silová rovnováha (Coulombova a dostředivá síla):]]
+    - [[#3. Celková energie elektronu $E_n$:|3. Celková energie elektronu $E_n$:]]
+  - [[#Příklad z tabule: Spektrální přechod $n = 3 \to n = 2$ (Balmerova série, čára $H_\alpha$)|Příklad z tabule: Spektrální přechod $n = 3 \to n = 2$ (Balmerova série, čára $H_\alpha$)]]
+- [[#3. Vlnová funkce a atomové orbitaly|3. Vlnová funkce a atomové orbitaly]]
+  - [[#Bornova pravděpodobnostní interpretace|Bornova pravděpodobnostní interpretace]]
+  - [[#Atomové orbitaly ($s, p, d, f$)|Atomové orbitaly ($s, p, d, f$)]]
+- [[#4. Heisenbergovy relace neurčitosti|4. Heisenbergovy relace neurčitosti]]
+  - [[#1. Polohově-hybnostní relace|1. Polohově-hybnostní relace]]
+  - [[#2. Časově-energetická relace|2. Časově-energetická relace]]
+- [[#5. Záření absolutně černého tělesa (AČT)|5. Záření absolutně černého tělesa (AČT)]]
+  - [[#Definice a emisivita povrchu $\varepsilon$|Definice a emisivita povrchu $\varepsilon$]]
+  - [[#Spektrum záření AČT a Planckův zákon|Spektrum záření AČT a Planckův zákon]]
+    - [[#Dva klíčové rysy spektrálních křivek:|Dva klíčové rysy spektrálních křivek:]]
+    - [[#Ultrafialová katastrofa vs. Kvantová hypotéza:|Ultrafialová katastrofa vs. Kvantová hypotéza:]]
+  - [[#Wienův posunovací zákon|Wienův posunovací zákon]]
+    - [[#Příklad z tabule ($\lambda_{\max} = 300\text{ nm}$):|Příklad z tabule ($\lambda_{\max} = 300\text{ nm}$):]]
+- [[#Přílohy: Fotodokumentace z výuky|Přílohy: Fotodokumentace z výuky]]
+  - [[#Tabule 1: Bohrův model, vlnová funkce a Heisenbergovy relace|Tabule 1: Bohrův model, vlnová funkce a Heisenbergovy relace]]
+  - [[#Tabule 2: Absolutně černé těleso, Wienův posunovací zákon a emisivita|Tabule 2: Absolutně černé těleso, Wienův posunovací zákon a emisivita]]
+
 ## Souhrn konstant a vzorců (Tahák)
 
 ### 🔴 Základní konstanty

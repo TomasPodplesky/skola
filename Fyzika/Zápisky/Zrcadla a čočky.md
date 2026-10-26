@@ -1,4 +1,36 @@
-	# Optika: Geometrická optika – Zrcadla a čočky
+# Optika: Geometrická optika – Zrcadla a čočky
+
+## Tahák vzorců
+
+| Vzorec | Název | Vypočítáme |
+|---|---|---|
+| $f=\frac{r}{2}$ | Ohnisková vzdálenost kulového zrcadla | ohniskovou vzdálenost nebo poloměr křivosti |
+| $\frac{1}{f}=\frac{1}{a}+\frac{1}{a'}$ | Zobrazovací rovnice | ohniskovou vzdálenost nebo vzdálenost předmětu či obrazu |
+| $Z=\frac{y'}{y}=-\frac{a'}{a}$ | Příčné zvětšení | zvětšení nebo výšku obrazu |
+| $\phi=\frac{1}{f}$ | Optická mohutnost čočky | optickou mohutnost |
+| $\frac{1}{f}=\left(\frac{n_2}{n_1}-1\right)\left(\frac{1}{R_1}+\frac{1}{R_2}\right)$ | Výrobní rovnice tenké čočky | ohniskovou vzdálenost čočky |
+
+
+## Obsah
+
+- [[#Tahák vzorců|Tahák vzorců]]
+- [[#I. Přehled vzorců a rovnic|I. Přehled vzorců a rovnic]]
+  - [[#1. Vztah mezi ohniskovou vzdáleností a poloměrem křivosti (kulová zrcadla)|1. Vztah mezi ohniskovou vzdáleností a poloměrem křivosti (kulová zrcadla)]]
+  - [[#2. Zobrazovací rovnice (pro zrcadla i tenké čočky)|2. Zobrazovací rovnice (pro zrcadla i tenké čočky)]]
+  - [[#3. Příčné zvětšení ($Z$)|3. Příčné zvětšení ($Z$)]]
+  - [[#4. Optická mohutnost čočky ($\phi$)|4. Optická mohutnost čočky ($\phi$)]]
+  - [[#5. Rovnice pro ohniskovou vzdálenost tenké čočky (výrobní rovnice)|5. Rovnice pro ohniskovou vzdálenost tenké čočky (výrobní rovnice)]]
+- [[#II. Teoretické poznámky|II. Teoretické poznámky]]
+  - [[#1. Základní pojmy|1. Základní pojmy]]
+  - [[#2. Kulová zrcadla (Odraz světla)|2. Kulová zrcadla (Odraz světla)]]
+    - [[#A) Duté zrcadlo (sbíhavé)|A) Duté zrcadlo (sbíhavé)]]
+      - [[#Vlastnosti obrazu u dutého zrcadla podle polohy předmětu ($a$):|Vlastnosti obrazu u dutého zrcadla podle polohy předmětu ($a$):]]
+    - [[#B) Vypuklé zrcadlo (rozptylné)|B) Vypuklé zrcadlo (rozptylné)]]
+  - [[#3. Čočky (Lom světla)|3. Čočky (Lom světla)]]
+    - [[#A) Spojná čočka – Spojka (konvexní)|A) Spojná čočka – Spojka (konvexní)]]
+      - [[#Vlastnosti obrazu u spojné čočky podle polohy předmětu ($a$):|Vlastnosti obrazu u spojné čočky podle polohy předmětu ($a$):]]
+    - [[#B) Rozptylná čočka – Rozptylka (konkávní)|B) Rozptylná čočka – Rozptylka (konkávní)]]
+  - [[#4. Rychlé srovnání (Tahák)|4. Rychlé srovnání (Tahák)]]
 
 ## I. Přehled vzorců a rovnic
 

@@ -1,10 +1,25 @@
 # Příprava na čtvrtletní písemnou práci z matematiky - Teorie
 
-Tento dokument slouží jako teoretická příprava na čtvrtletní písemnou práci. Témata pokrývají **limity posloupností**, **Kochovu vločku (nekonečné řady v geometrii)**, **aritmetické a geometrické posloupnosti (včetně parametrů)** a **slovní úlohy na finanční matematiku / exponenciální pokles**.
+## Obsah
 
-Příklady k procvičení najdeš v samostatném souboru `priprava_na_ctvrtletku_priklady.md`.
-
----
+- [[#1. Limity posloupností|1. Limity posloupností]]
+- [[#2. Kochova vločka (Nekonečné řady v geometrii)|2. Kochova vločka (Nekonečné řady v geometrii)]]
+  - [[#Odvození vzorců v nekonečnu ($n \to \infty$)|Odvození vzorců v nekonečnu ($n \to \infty$)]]
+    - [[#A) Obvod v nekonečnu ($O_\infty$)|A) Obvod v nekonečnu ($O_\infty$)]]
+    - [[#B) Obsah v nekonečnu ($S_\infty$)|B) Obsah v nekonečnu ($S_\infty$)]]
+- [[#3. Posloupnosti a vlastnosti|3. Posloupnosti a vlastnosti]]
+  - [[#Klíčová vlastnost geometrické posloupnosti|Klíčová vlastnost geometrické posloupnosti]]
+  - [[#Vlastnost aritmetické posloupnosti|Vlastnost aritmetické posloupnosti]]
+  - [[#Nekonečné geometrické řady|Nekonečné geometrické řady]]
+- [[#4. Slovní úlohy & Finanční matematika|4. Slovní úlohy & Finanční matematika]]
+- [[#5. Přehled vzorců (Tahák)|5. Přehled vzorců (Tahák)]]
+  - [[#Aritmetická posloupnost|Aritmetická posloupnost]]
+  - [[#Geometrická posloupnost|Geometrická posloupnost]]
+  - [[#Limity|Limity]]
+  - [[#Logaritmy|Logaritmy]]
+  - [[#Mocniny|Mocniny]]
+  - [[#Odmocniny|Odmocniny]]
+- [[#Rychlý checklist před písemkou:|Rychlý checklist před písemkou:]]
 
 ## 1. Limity posloupností
 

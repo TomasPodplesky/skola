@@ -1,33 +1,10 @@
-![[Syntax 2.docx]]
-Ještě jako studentka objevila Eva Sherlocka Holmese, postavu z románů A. C.
-Doyla. Hned jí připadal úžasný. Dokázal šermovat, vyznal se v chemii, hrál skvěle
-na housle. Hlavně ale obdivovala jeho schopnost dedukce a to, jak ho každý
-případ pohltil. Čtouc jeho případy se Eva rozhodla pro detektivní dráhu.
 
-a) Vypište z textu všechny předměty (je jich 11) + 1x je předmět vyjádřen VV předmětnou.
-1. Sherlocka Holmese 
-2. postavu
-3. jí
-4. v chemii
-5. na housle
-6. schopnost
-7. dedukce
-8. ho
-9. případy
-10. jeho
+## Obsah
 
-
-
-b) Vypište z textu všechny doplňky (jsou 3).
- 1. jako studentka
- 2. úžasný
- 3. čtout
-
-
-c) Vypište z textu přístavek.
-1. postavu z románu a c doyla
-
----
+- [[#2. Vypište z vět příslovečná určení a určete i jejich druh:|2. Vypište z vět příslovečná určení a určete i jejich druh:]]
+- [[#3. Vypište z vět přívlastky a rozlište shodné a neshodné:|3. Vypište z vět přívlastky a rozlište shodné a neshodné:]]
+- [[#4. Rozlište přívlastky a doplňte čárky:|4. Rozlište přívlastky a doplňte čárky:]]
+- [[#5. Určete všechny větné členy a pak větu rozšiřte o přístavek:|5. Určete všechny větné členy a pak větu rozšiřte o přístavek:]]
 
 ### 2. Vypište z vět příslovečná určení a určete i jejich druh:
 

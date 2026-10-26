@@ -1,5 +1,12 @@
 # Cvičení - Tvary zájmen (04)
 
+## Obsah
+
+- [[#1. Oprava chybných tvarů|1. Oprava chybných tvarů]]
+- [[#2. Doplnění správných tvarů v závorkách|2. Doplnění správných tvarů v závorkách]]
+- [[#3. Doplnění vhodných zájmen|3. Doplnění vhodných zájmen]]
+- [[#4. Nahrazení „který“ za „jenž“|4. Nahrazení „který“ za „jenž“]]
+
 ## 1. Oprava chybných tvarů
 *   **svojeho** $\rightarrow$ **svého** (Volala na svého psa.)
 *   **jíž** $\rightarrow$ **již** (Je to žena, již miluji. – 4. pád)

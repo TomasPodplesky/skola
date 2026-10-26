@@ -1,9 +1,40 @@
 # Příprava na čtvrtletní písemnou práci z matematiky - Příklady
 
-Příklady obsahují skryté řešení. Nejdříve si příklad spočítej sám/sama a poté si zkontroluj výsledek kliknutím na **Zobrazit řešení**. 
-Teoretický základ k těmto příkladům nalezneš v souboru `priprava_na_ctvrtletku_teorie.md`.
+## Obsah
 
----
+- [[#1. Limity posloupností|1. Limity posloupností]]
+    - [[#Příklad 1.1: Racionální lomená funkce|Příklad 1.1: Racionální lomená funkce]]
+    - [[#Příklad 1.2: Limita s exponenciálními členy|Příklad 1.2: Limita s exponenciálními členy]]
+    - [[#Příklad 1.3: Limita s rozdílem odmocnin|Příklad 1.3: Limita s rozdílem odmocnin]]
+    - [[#Příklad 1.4: Limita s odmocninami pod podílem|Příklad 1.4: Limita s odmocninami pod podílem]]
+    - [[#Příklad 1.5: Limita s faktoriály|Příklad 1.5: Limita s faktoriály]]
+    - [[#Příklad 1.6: Limita s rozdílem kubických polynomů|Příklad 1.6: Limita s rozdílem kubických polynomů]]
+    - [[#Příklad 1.7: Složitější rozdíl odmocnin|Příklad 1.7: Složitější rozdíl odmocnin]]
+    - [[#Příklad 1.8: Limita složená ze sumy aritmetické posloupnosti|Příklad 1.8: Limita složená ze sumy aritmetické posloupnosti]]
+    - [[#Příklad 1.9: Limita s exponenciálními členy (jiný poměr)|Příklad 1.9: Limita s exponenciálními členy (jiný poměr)]]
+    - [[#Příklad 1.10: Limita s exponenciálními členy a různými základy|Příklad 1.10: Limita s exponenciálními členy a různými základy]]
+    - [[#Příklad 1.11: Limita zlomku s odmocninami|Příklad 1.11: Limita zlomku s odmocninami]]
+- [[#2. Kochova vločka|2. Kochova vločka]]
+    - [[#Příklad 2.1: Výpočet pro konkrétní stranu|Příklad 2.1: Výpočet pro konkrétní stranu]]
+- [[#3. Posloupnosti|3. Posloupnosti]]
+    - [[#Příklad 3.1: Vyřešení geometrické posloupnosti|Příklad 3.1: Vyřešení geometrické posloupnosti]]
+    - [[#Příklad 3.2: Vyřešení korektní aritmetické posloupnosti|Příklad 3.2: Vyřešení korektní aritmetické posloupnosti]]
+    - [[#Příklad 3.3: Tři po sobě jdoucí členy geometrické posloupnosti|Příklad 3.3: Tři po sobě jdoucí členy geometrické posloupnosti]]
+    - [[#Příklad 3.4: Alternativní variace na parametr v GP|Příklad 3.4: Alternativní variace na parametr v GP]]
+    - [[#Příklad 3.5: Nekonečný součin převedený na geometrickou řadu|Příklad 3.5: Nekonečný součin převedený na geometrickou řadu]]
+    - [[#Příklad 3.6: Součet členů aritmetické posloupnosti|Příklad 3.6: Součet členů aritmetické posloupnosti]]
+    - [[#Příklad 3.7: Rovnice s nekonečnou geometrickou řadou|Příklad 3.7: Rovnice s nekonečnou geometrickou řadou]]
+    - [[#Příklad 3.8: Geometrická posloupnost v praxi (množení bakterií)|Příklad 3.8: Geometrická posloupnost v praxi (množení bakterií)]]
+    - [[#Příklad 3.9: Parametr pro aritmetickou posloupnost|Příklad 3.9: Parametr pro aritmetickou posloupnost]]
+    - [[#Příklad 3.10: Součet nekonečné geometrické řady|Příklad 3.10: Součet nekonečné geometrické řady]]
+    - [[#Příklad 3.11: Soustava rovnic pro geometrickou posloupnost (vytýkání)|Příklad 3.11: Soustava rovnic pro geometrickou posloupnost (vytýkání)]]
+    - [[#Příklad 3.12: Soustava rovnic pro aritmetickou posloupnost|Příklad 3.12: Soustava rovnic pro aritmetickou posloupnost]]
+    - [[#Příklad 3.13: Parametr $x$ v geometrické posloupnosti se substitucí|Příklad 3.13: Parametr $x$ v geometrické posloupnosti se substitucí]]
+    - [[#Příklad 3.14: Parametr $x$ v aritmetické posloupnosti s logaritmy|Příklad 3.14: Parametr $x$ v aritmetické posloupnosti s logaritmy]]
+- [[#4. Slovní úlohy & Finanční matematika|4. Slovní úlohy & Finanční matematika]]
+    - [[#Příklad 4.1: Absorpce světla|Příklad 4.1: Absorpce světla]]
+    - [[#Příklad 4.2: Kamarád lichvář (složené úročení)|Příklad 4.2: Kamarád lichvář (složené úročení)]]
+    - [[#Příklad 4.3: Nehtové studio (pravidelné spoření)|Příklad 4.3: Nehtové studio (pravidelné spoření)]]
 
 ## 1. Limity posloupností
 

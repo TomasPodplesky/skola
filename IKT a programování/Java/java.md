@@ -1,5 +1,44 @@
 # Java - Základy a Syntaxe
 
+## Obsah
+
+- [[#1. Struktura programu|1. Struktura programu]]
+- [[#2. Proměnné a datové typy|2. Proměnné a datové typy]]
+- [[#3. Výpis do konzole (Terminál)|3. Výpis do konzole (Terminál)]]
+- [[#4. Načítání vstupu (třída Scanner)|4. Načítání vstupu (třída Scanner)]]
+- [[#5. Větvení (Podmínky a Switch)|5. Větvení (Podmínky a Switch)]]
+- [[#6. Cykly (Loops)|6. Cykly (Loops)]]
+- [[#7. Pole (Arrays)|7. Pole (Arrays)]]
+- [[#8. Třída Math|8. Třída Math]]
+- [[#9. Práce s textovými řetězci (String)|9. Práce s textovými řetězci (String)]]
+  - [[#Porovnávání řetězců|Porovnávání řetězců]]
+  - [[#Získání části řetězce|Získání části řetězce]]
+  - [[#Získání znaku na indexu|Získání znaku na indexu]]
+  - [[#Hledání znaku nebo podřetězce|Hledání znaku nebo podřetězce]]
+  - [[#Náhrada znaků|Náhrada znaků]]
+- [[#10. Objektově orientované programování (OOP)|10. Objektově orientované programování (OOP)]]
+  - [[#10.1 Myšlenka OOP|10.1 Myšlenka OOP]]
+  - [[#10.2 Základní pilíře OOP|10.2 Základní pilíře OOP]]
+    - [[#1. Zapouzdření (Encapsulation)|1. Zapouzdření (Encapsulation)]]
+    - [[#2. Dědičnost (Inheritance)|2. Dědičnost (Inheritance)]]
+    - [[#3. Polymorfismus (Mnohotvárnost)|3. Polymorfismus (Mnohotvárnost)]]
+  - [[#10.3 Základní pojmy|10.3 Základní pojmy]]
+  - [[#10.4 Vytvoření nové třídy a její syntaxe|10.4 Vytvoření nové třídy a její syntaxe]]
+  - [[#10.5 Atributy (Vlastnosti objektu)|10.5 Atributy (Vlastnosti objektu)]]
+  - [[#10.6 Vytvoření instance a konstruktor|10.6 Vytvoření instance a konstruktor]]
+  - [[#10.7 Instance vs. Odkaz (Paměťový model: Halda a Garbage Collector)|10.7 Instance vs. Odkaz (Paměťový model: Halda a Garbage Collector)]]
+  - [[#10.8 Souhrnný příklad: Třída Kruh|10.8 Souhrnný příklad: Třída Kruh]]
+- [[#11. Přetěžování metod a konstruktorů (Overloading)|11. Přetěžování metod a konstruktorů (Overloading)]]
+  - [[#11.1 Co je přetěžování|11.1 Co je přetěžování]]
+  - [[#11.2 Signatura metody (Method Signature)|11.2 Signatura metody (Method Signature)]]
+    - [[#Co TVOŘÍ signaturu:|Co TVOŘÍ signaturu:]]
+    - [[#Co NETVOŘÍ signaturu (Kritická pravidla):|Co NETVOŘÍ signaturu (Kritická pravidla):]]
+  - [[#11.3 Přetěžování konstruktorů (Constructor Overloading)|11.3 Přetěžování konstruktorů (Constructor Overloading)]]
+    - [[#Zřetězení konstruktorů (`this(...)`)|Zřetězení konstruktorů (`this(...)`)]]
+    - [[#Příklad: Třída Obdelnik s přetíženými konstruktory|Příklad: Třída Obdelnik s přetíženými konstruktory]]
+  - [[#11.4 Srovnání: Přetěžování (Overloading) vs. Překrývání (Overriding)|11.4 Srovnání: Přetěžování (Overloading) vs. Překrývání (Overriding)]]
+  - [[#11.5 Automatická typová konverze při přetěžování|11.5 Automatická typová konverze při přetěžování]]
+
 ## 1. Struktura programu
 Každý program v Javě se skládá z tříd (`class`). Vstupním bodem aplikace je metoda `main`.
 Název třídy (zde `Main`) se musí shodovat s názvem souboru (`Main.java`). 

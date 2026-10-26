@@ -1,6 +1,35 @@
 # Statistika a testování hypotéz
 
----
+## Obsah
+
+- [[#1. Základní charakteristiky jednorozměrného souboru|1. Základní charakteristiky jednorozměrného souboru]]
+  - [[#1.1 Míry polohy (střední hodnoty)|1.1 Míry polohy (střední hodnoty)]]
+  - [[#1.2 Míry variability (rozptýlenosti)|1.2 Míry variability (rozptýlenosti)]]
+  - [[#1.3 Kvartily a detekce odlehlých hodnot (Boxplot)|1.3 Kvartily a detekce odlehlých hodnot (Boxplot)]]
+  - [[#1.4 Míry tvaru rozdělení|1.4 Míry tvaru rozdělení]]
+    - [[#Šikmost (Skewness) $a$|Šikmost (Skewness) $a$]]
+    - [[#Špičatost (Kurtosis / Koeficient excesu) $b$|Špičatost (Kurtosis / Koeficient excesu) $b$]]
+  - [[#1.5 Třídění spojitých dat do intervalů|1.5 Třídění spojitých dat do intervalů]]
+    - [[#Počet intervalů (tříd) $k$|Počet intervalů (tříd) $k$]]
+    - [[#Šířka intervalu $h$|Šířka intervalu $h$]]
+- [[#2. Dvourozměrný statistický soubor (Korelace a regrese)|2. Dvourozměrný statistický soubor (Korelace a regrese)]]
+  - [[#2.1 Pearsonův korelační koeficient ($r$)|2.1 Pearsonův korelační koeficient ($r$)]]
+  - [[#2.2 Lineární regrese|2.2 Lineární regrese]]
+  - [[#2.3 Spearmanův koeficient pořadové korelace ($r_s$)|2.3 Spearmanův koeficient pořadové korelace ($r_s$)]]
+    - [[#Postup výpočtu:|Postup výpočtu:]]
+- [[#3. Testování hypotéz – Párové pokusy|3. Testování hypotéz – Párové pokusy]]
+  - [[#3.1 Wilcoxonův test pro párové pokusy (Wilcoxon Signed-Rank Test)|3.1 Wilcoxonův test pro párové pokusy (Wilcoxon Signed-Rank Test)]]
+    - [[#Algoritmus výpočtu:|Algoritmus výpočtu:]]
+    - [[#Příklad z předlohy ($n = 8$ pacientů, antibiotikum A vs B):|Příklad z předlohy ($n = 8$ pacientů, antibiotikum A vs B):]]
+  - [[#3.2 Znaménkový test (Sign Test)|3.2 Znaménkový test (Sign Test)]]
+- [[#4. Testy dobré shody a analýza závislostí ($\chi^2$ testy)|4. Testy dobré shody a analýza závislostí ($\chi^2$ testy)]]
+  - [[#4.1 Kontingenční tabulky (Test nezávislosti dvou kvalitativních znaků)|4.1 Kontingenční tabulky (Test nezávislosti dvou kvalitativních znaků)]]
+    - [[#Míry síly závislosti (asociace) v kontingenční tabulce:|Míry síly závislosti (asociace) v kontingenční tabulce:]]
+  - [[#4.2 Pearsonův test dobré shody (Goodness-of-Fit / Test normality a rozdělení)|4.2 Pearsonův test dobré shody (Goodness-of-Fit / Test normality a rozdělení)]]
+    - [[#Teoretická distribuční funkce $F(x)$:|Teoretická distribuční funkce $F(x)$:]]
+    - [[#Postup výpočtu:|Postup výpočtu:]]
+    - [[#Příklad z předlohy (Počet kliků náhodně vybraných žáků, $n = 70$):|Příklad z předlohy (Počet kliků náhodně vybraných žáků, $n = 70$):]]
+- [[#5. Rychlý tahák funkcí v LibreOffice Calc / MS Excel|5. Rychlý tahák funkcí v LibreOffice Calc / MS Excel]]
 
 ## 1. Základní charakteristiky jednorozměrného souboru
 

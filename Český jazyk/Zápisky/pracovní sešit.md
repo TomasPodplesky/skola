@@ -1,5 +1,11 @@
 # Pracovní sešit
 
+## Obsah
+
+- [[#18. Ve větách podtrhněte přídavná jména.|18. Ve větách podtrhněte přídavná jména.]]
+- [[#19. a) Utvořte zadané tvary přídavných a podstatných jmen.|19. a) Utvořte zadané tvary přídavných a podstatných jmen.]]
+- [[#19. b) Od výše uvedených přídavných jmen, u nichž je to možné, utvořte 2. a 3. stupeň.|19. b) Od výše uvedených přídavných jmen, u nichž je to možné, utvořte 2. a 3. stupeň.]]
+
 ## 18. Ve větách podtrhněte přídavná jména.
 - Baví mě vyprávění o <u>babiččině</u> mládí.  - 6. p., č. j., rod stř., přivlastňovací, vzor matčin
 - Dáváme přednost <u>českým</u> potravinám.  - 3. p., č. mn., rod ž., tvrdé, vzor mladý, 1. st.

@@ -1,10 +1,38 @@
 # Příprava na čtvrtletní písemnou práci z matematiky
 
-Tento dokument slouží jako komplexní příprava na čtvrtletní písemnou práci. Témata pokrývají **limity posloupností**, **Kochovu vločku (nekonečné řady v geometrii)**, **aritmetické a geometrické posloupnosti (včetně parametrů)** a **slovní úlohy na finanční matematiku / exponenciální pokles**.
+## Obsah
 
-Příklady obsahují skryté řešení. Nejdříve si příklad spočítej sám/sama a poté si zkontroluj výsledek kliknutím na **Zobrazit řešení**.
-
----
+- [[#1. Limity posloupností|1. Limity posloupností]]
+  - [[#Cvičné příklady|Cvičné příklady]]
+    - [[#Příklaď 1.1: Racionální lomená funkce (podobná té z testu)|Příklaď 1.1: Racionální lomená funkce (podobná té z testu)]]
+    - [[#Příklad 1.2: Limita s exponenciálními členy|Příklad 1.2: Limita s exponenciálními členy]]
+    - [[#Příklad 1.3: Limita s rozdílem odmocnin|Příklad 1.3: Limita s rozdílem odmocnin]]
+    - [[#Příklad 1.4: Limita s odmocninami pod podílem|Příklad 1.4: Limita s odmocninami pod podílem]]
+    - [[#Příklad 1.5: Limita s faktoriály|Příklad 1.5: Limita s faktoriály]]
+- [[#2. Kochova vločka (Nekonečné řady v geometrii)|2. Kochova vločka (Nekonečné řady v geometrii)]]
+  - [[#Odvození vzorců v nekonečnu ($n \to \infty$)|Odvození vzorců v nekonečnu ($n \to \infty$)]]
+    - [[#A) Obvod v nekonečnu ($O_\infty$)|A) Obvod v nekonečnu ($O_\infty$)]]
+    - [[#B) Obsah v nekonečnu ($S_\infty$)|B) Obsah v nekonečnu ($S_\infty$)]]
+  - [[#Cvičný příklad na Kochovu vločku|Cvičný příklad na Kochovu vločku]]
+    - [[#Příklad 2.1: Výpočet pro konkrétní stranu|Příklad 2.1: Výpočet pro konkrétní stranu]]
+- [[#3. Posloupnosti z testu (a jejich varianty)|3. Posloupnosti z testu (a jejich varianty)]]
+  - [[#Úloha typu 2: Soustavy rovnic u aritmetické a geometrické posloupnosti|Úloha typu 2: Soustavy rovnic u aritmetické a geometrické posloupnosti]]
+    - [[#Příklad 3.1: Vyřešení geometrické verze z fotky|Příklad 3.1: Vyřešení geometrické verze z fotky]]
+    - [[#Příklad 3.2: Vyřešení korektní aritmetické verze|Příklad 3.2: Vyřešení korektní aritmetické verze]]
+  - [[#Úloha typu 3: Tři po sobě jdoucí členy geometrické posloupnosti|Úloha typu 3: Tři po sobě jdoucí členy geometrické posloupnosti]]
+    - [[#Příklad 3.3: Vyřešení úlohy 3 z fotky|Příklad 3.3: Vyřešení úlohy 3 z fotky]]
+    - [[#Příklad 3.4: Alternativní variace této úlohy|Příklad 3.4: Alternativní variace této úlohy]]
+  - [[#Úloha typu 5: Nekonečný součin převedený na geometrickou řadu|Úloha typu 5: Nekonečný součin převedený na geometrickou řadu]]
+    - [[#Příklad 3.5: Vyřešení úlohy 5 z fotky|Příklad 3.5: Vyřešení úlohy 5 z fotky]]
+    - [[#Příklad 3.6: Součet členů aritmetické posloupnosti|Příklad 3.6: Součet členů aritmetické posloupnosti]]
+    - [[#Příklad 3.7: Rovnice s nekonečnou geometrickou řadou|Příklad 3.7: Rovnice s nekonečnou geometrickou řadou]]
+    - [[#Příklad 3.8: Geometrická posloupnost v praxi (množení bakterií)|Příklad 3.8: Geometrická posloupnost v praxi (množení bakterií)]]
+- [[#4. Slovní úlohy & Finanční matematika|4. Slovní úlohy & Finanční matematika]]
+  - [[#Cvičné příklady|Cvičné příklady]]
+    - [[#Příklad 4.1: Absorpce světla (úloha 4 z fotky)|Příklad 4.1: Absorpce světla (úloha 4 z fotky)]]
+    - [[#Příklad 4.2: Kamarád lichvář (složené úročení)|Příklad 4.2: Kamarád lichvář (složené úročení)]]
+    - [[#Příklad 4.3: Nehtové studio (pravidelné spoření)|Příklad 4.3: Nehtové studio (pravidelné spoření)]]
+- [[#Rychlý checklist před písemkou:|Rychlý checklist před písemkou:]]
 
 ## 1. Limity posloupností
 

@@ -1,5 +1,22 @@
 # Posloupnosti a řady
 
+## Obsah
+
+- [[#1. Základní pojmy|1. Základní pojmy]]
+- [[#2. Základní druhy posloupností|2. Základní druhy posloupností]]
+  - [[#Aritmetická posloupnost|Aritmetická posloupnost]]
+  - [[#Geometrická posloupnost|Geometrická posloupnost]]
+- [[#3. Řady a finanční matematika|3. Řady a finanční matematika]]
+  - [[#Úrokování|Úrokování]]
+- [[#4. Vlastnosti posloupností|4. Vlastnosti posloupností]]
+  - [[#Monotónnost (Růst a klesání)|Monotónnost (Růst a klesání)]]
+  - [[#Omezenost|Omezenost]]
+- [[#5. Způsoby zadání posloupnosti|5. Způsoby zadání posloupnosti]]
+- [[#6. Limita, konvergence a divergence|6. Limita, konvergence a divergence]]
+  - [[#Konvergentní posloupnost|Konvergentní posloupnost]]
+  - [[#Divergentní posloupnost|Divergentní posloupnost]]
+  - [[#Periodická posloupnost|Periodická posloupnost]]
+
 ## 1. Základní pojmy
 
 Posloupnost je uspořádaný seznam čísel. Matematicky se jedná o funkci, jejímž definičním oborem jsou přirozená čísla. Každému přirozenému číslu $n$ (určujícímu pořadí) je přiřazeno reálné číslo $a_n$, které nazýváme $n$-tý člen posloupnosti.**

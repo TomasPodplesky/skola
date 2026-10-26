@@ -1,5 +1,18 @@
 # Kombinatorika
 
+## Obsah
+
+- [[#Rychlé shrnutí|Rychlé shrnutí]]
+- [[#Faktoriál|Faktoriál]]
+- [[#Variace bez opakování|Variace bez opakování]]
+- [[#Permutace bez opakování|Permutace bez opakování]]
+- [[#Kombinace bez opakování|Kombinace bez opakování]]
+- [[#Kombinační čísla|Kombinační čísla]]
+- [[#Variace s opakováním|Variace s opakováním]]
+- [[#Permutace s opakováním|Permutace s opakováním]]
+- [[#Kombinace s opakováním|Kombinace s opakováním]]
+- [[#Binomická věta a Pascalův trojúhelník|Binomická věta a Pascalův trojúhelník]]
+
 ## Rychlé shrnutí
 - **Variace** - uspořádávám $k$-tici, záleží na pořadí - např. 3cif. číslo vytvořím z číslic $\{1; 2; 3; 4; 5\} \Rightarrow$ když se můžou opakovat, tak $5^3$, protože 5 - počet (něčeho) k dispozici a 3 - počet (míst) kam můžeme (něco) dát. Když se opakovat nemůžou, tak je to rekurzivní, takže $5 \cdot 4 \cdot 3$, protože na první můžu dát 5 různých čísel, na druhý už jen čtyři (nemůžu opakovat) a pak tři $\rightarrow$ převedeno na $V(3; 5) = \frac{5!}{(5-3)!}$ a s opakováním je to $V'(3; 5) = 5^3$.
 - **Permutace** - uspořádání všech prvků co mám, záleží na pořadí. $P(n) = n!$ ; $P'(k_1, k_2, \dots, k_n) = \frac{(k_1 + k_2 + \dots + k_n)!}{k_1! \cdot k_2! \cdots k_n!}$

@@ -1,5 +1,36 @@
 # Speciální teorie relativity (STR)
 
+## Tahák vzorců
+
+| Vzorec | Název | Vypočítáme |
+|---|---|---|
+| $\gamma=\frac{1}{\sqrt{1-v^2/c^2}}$ | Lorentzův faktor | Lorentzův faktor při rychlosti $v$ |
+| $\Delta t=\gamma\Delta t_0$ | Dilatace času | relativistický časový interval |
+| $L=\frac{L_0}{\gamma}$ | Kontrakce délek | délku pohybujícího se tělesa |
+| $p=\gamma m_0v$ | Relativistická hybnost | hybnost tělesa |
+| $E=\gamma m_0c^2$ | Celková energie | celkovou energii tělesa |
+| $E_0=m_0c^2$ | Klidová energie | energii tělesa v klidu |
+| $E_k=m_0c^2(\gamma-1)$ | Relativistická kinetická energie | kinetickou energii tělesa |
+| $x'=\gamma(x-vt),\quad t'=\gamma(t-vx/c^2)$ | Lorentzovy transformace | souřadnici a čas v pohybující se soustavě |
+
+
+## Obsah
+
+- [[#Tahák vzorců|Tahák vzorců]]
+- [[#Souhrn konstant a vzorců (Tahák)|Souhrn konstant a vzorců (Tahák)]]
+  - [[#🔴 Základní konstanty|🔴 Základní konstanty]]
+  - [[#🔵 Klíčové vzorce a jejich význam|🔵 Klíčové vzorce a jejich význam]]
+- [[#Základní informace|Základní informace]]
+- [[#Postuláty STR|Postuláty STR]]
+- [[#Kinematika STR|Kinematika STR]]
+  - [[#1. Relativnost současnosti|1. Relativnost současnosti]]
+  - [[#2. Dilatace času|2. Dilatace času]]
+  - [[#3. Kontrakce délek (Lorentzova-FitzGeraldova kontrakce)|3. Kontrakce délek (Lorentzova-FitzGeraldova kontrakce)]]
+- [[#Dynamika STR|Dynamika STR]]
+  - [[#1. Relativistická hybnost|1. Relativistická hybnost]]
+  - [[#2. Ekvivalence hmotnosti a energie|2. Ekvivalence hmotnosti a energie]]
+- [[#Lorentzovy transformace|Lorentzovy transformace]]
+
 ## Souhrn konstant a vzorců (Tahák)
 
 ### 🔴 Základní konstanty
