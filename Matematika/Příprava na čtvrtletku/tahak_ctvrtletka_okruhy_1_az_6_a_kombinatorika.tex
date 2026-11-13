@@ -1,0 +1,577 @@
+\documentclass[9pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\tcbuselibrary{skins,breakable}
+
+%--- Geometry ---
+\geometry{a4paper, left=0.8cm, right=0.8cm, top=0.8cm, bottom=0.8cm}
+\pagestyle{empty}
+
+%--- Compact formatting ---
+\renewcommand{\familydefault}{\sfdefault}
+\setlist{nosep, leftmargin=3.5mm}
+\setlength{\columnsep}{4mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5pt}
+
+%--- Colors ---
+\definecolor{primary}{RGB}{15,45,85}
+\definecolor{secondary}{RGB}{170,30,30}
+\definecolor{plotblue}{RGB}{0,102,204}
+\definecolor{plotred}{RGB}{204,20,20}
+\definecolor{plotgreen}{RGB}{0,145,65}
+\definecolor{plotorange}{RGB}{220,105,0}
+\definecolor{plotpurple}{RGB}{125,25,140}
+\definecolor{boxbg}{RGB}{246,248,252}
+\definecolor{boxframe}{RGB}{190,205,225}
+
+%--- tcolorbox styles ---
+\tcbset{
+  basebox/.style={enhanced,boxrule=0.6pt,arc=1.2mm,left=1.5mm,right=1.5mm,top=1mm,bottom=1mm,
+    coltitle=white,fonttitle=\bfseries\footnotesize},
+  secbox/.style={basebox,colback=boxbg,colframe=primary,coltitle=white},
+  alertbox/.style={basebox,colback=red!4!white,colframe=secondary},
+  rulebox/.style={basebox,colback=green!4!white,colframe=plotgreen!80!black},
+  minibox/.style={enhanced,boxrule=0.4pt,arc=0.8mm,left=1mm,right=1mm,top=0.8mm,bottom=0.8mm,colback=white,colframe=gray!40}
+}
+
+\begin{document}
+
+%=============================================================================
+% TITULNÍ LIŠTA
+%=============================================================================
+\begin{tcolorbox}[colback=primary,colframe=primary,arc=1mm,left=2mm,right=2mm,top=1mm,bottom=1mm]
+\color{white}
+\begin{center}
+{\bfseries\large MATEMATICKÝ TAHÁK NA ČTVRTLETNÍ PRÁCI (Okruhy 1--6, 24--26)}\\
+{\footnotesize SPŠE Plzeň -- Technické lyceum / Kybernetika \quad$\vert$\quad Kompletní přehled parametrů rovnic ($k, x, q, a, b, c$), grafů a vzorců}
+\end{center}
+\end{tcolorbox}
+
+%=============================================================================
+% 0. UNIVERZÁLNÍ TRANSFORMACE GRAFŮ
+%=============================================================================
+\begin{tcolorbox}[secbox,title=0. UNIVERZÁLNÍ TRANSFORMACE GRAFŮ: $y = a \cdot f\bigl(b(x - x_0)\bigr) + y_0$ (nebo $a \cdot f(x - m) + n$)]
+\begin{multicols}{4}
+\textbf{Posun po ose $x$ ($x_0$):}
+\begin{itemize}
+  \item $f(x - x_0) \Rightarrow$ \textbf{doprava} o $x_0$
+  \item $f(x + x_0) \Rightarrow$ \textbf{doleva} o $x_0$
+  \item Nulový bod argumentu určuje novou polohu počátku/osy.
+\end{itemize}
+\columnbreak
+\textbf{Posun po ose $y$ ($y_0$ resp. $q$):}
+\begin{itemize}
+  \item $+ y_0 \Rightarrow$ \textbf{nahoru} o $y_0$
+  \item $- y_0 \Rightarrow$ \textbf{dolů} o $y_0$
+  \item Přičítá se přímo k funkční hodnotě (posun celého grafu).
+\end{itemize}
+\columnbreak
+\textbf{Škálování po ose $y$ ($a$):}
+\begin{itemize}
+  \item $|a| > 1 \Rightarrow$ \textbf{protažení} (strmější)
+  \item $|a| < 1 \Rightarrow$ \textbf{zploštění} (plošší)
+  \item $a < 0 \Rightarrow$ \textbf{překlopení} podle osy $x$
+\end{itemize}
+\columnbreak
+\textbf{Absolutní hodnoty:}
+\begin{itemize}
+  \item $|f(x)| \Rightarrow$ co je pod osou $x$ ($y<0$), se překlopí \textbf{nahoru} ($y \ge 0$).
+  \item $f(|x|) \Rightarrow$ část pro $x<0$ se smaže, část $x \ge 0$ se zrcadlí podle osy $y$ (\textbf{sudá}).
+\end{itemize}
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% OKRUH 4: LINEÁRNÍ A KVADRATICKÉ FUNKCE
+%=============================================================================
+\begin{tcolorbox}[secbox,title=OKRUH 4: LINEÁRNÍ A KVADRATICKÉ FUNKCE -- ROZBOR PARAMETRŮ A GRAFY]
+\begin{multicols}{2}
+
+%--- LINEÁRNÍ FUNKCE ---
+\textbf{\large 1. Lineární funkce: $y = kx + q$ (obecně $ax + b$)}
+\begin{itemize}
+  \item \textbf{Parametr $k$ (směrnice, úhlový koeficient):} $k = \operatorname{tg} \varphi = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$
+  \begin{itemize}
+    \item $\mathbf{k > 0}$: funkce je \textbf{rostoucí}, svírá ostrý úhel s kladnou poloosou $x$. Větší $k \Rightarrow$ strmější růst.
+    \item $\mathbf{k = 0}$: funkce je \textbf{konstantní} ($y = q$), grafem je přímka rovnoběžná s osou $x$.
+    \item $\mathbf{k < 0}$: funkce je \textbf{klesající}, svírá tupý úhel. Čím menší (zápornější) $k \Rightarrow$ strmější pokles.
+  \end{itemize}
+  \item \textbf{Parametr $q$ (posun po ose $y$, úsek na ose $y$):}
+  \begin{itemize}
+    \item Určuje průsečík s osou $y$: $\mathbf{P_y = [0; q]}$.
+    \item $q = 0 \Rightarrow$ přímá úměrnost $y = kx$, přímka prochází počátkem $[0;0]$.
+  \end{itemize}
+  \item \textbf{Proměnná $x$ a průsečík s osou $x$:}
+  \begin{itemize}
+    \item $y = 0 \Rightarrow kx + q = 0 \Rightarrow \mathbf{P_x = \left[-\frac{q}{k}; 0\right]}$ (pro $k \neq 0$).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72, >=stealth]
+  \draw[->, gray!70] (-2.2,0) -- (2.5,0) node[right, black] {\scriptsize $x$};
+  \draw[->, gray!70] (0,-1.6) -- (0,2.5) node[above, black] {\scriptsize $y$};
+  \draw[plotblue, thick] (-1.8,-0.9) -- (1.8,2.1) node[above right=-2pt] {\scriptsize $\mathbf{k>0}$};
+  \draw[plotgreen, thick] (-1.8,0.8) -- (1.8,0.8) node[right] {\scriptsize $\mathbf{k=0}$};
+  \draw[plotred, thick] (-1.8,2.1) -- (1.8,-0.5) node[below right=-2pt] {\scriptsize $\mathbf{k<0}$};
+  \filldraw[black] (0,0.8) circle (1.8pt) node[below left=-1pt] {\scriptsize $q$};
+  \node[draw=none, fill=white, inner sep=0.5pt] at (1.5,-1.2) {\tiny $P_y=[0;q]$};
+\end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+%--- KVADRATICKÁ FUNKCE ---
+\textbf{\large 2. Kvadratická funkce: $y = ax^2 + bx + c$}
+\textbf{Vrcholový tvar:} $y = a(x - x_0)^2 + y_0$, vrchol $\mathbf{V[x_0; y_0]} = \left[-\frac{b}{2a};\; c - \frac{b^2}{4a}\right] = \left[-\frac{b}{2a};\; -\frac{D}{4a}\right]$.
+\begin{itemize}
+  \item \textbf{Parametr $a$ (tvar a orientace paraboly):}
+  \begin{itemize}
+    \item $\mathbf{a > 0}$: parabola otevřená \textbf{nahoru} ($\cup$), vrchol je globální \textbf{minimum}, $H_f = \langle y_0; \infty)$.
+    \item $\mathbf{a < 0}$: parabola otevřená \textbf{dolů} ($\cap$), vrchol je globální \textbf{maximum}, $H_f = (-\infty; y_0\rangle$.
+    \item $\mathbf{|a| > 1}$: parabola je \textbf{zúžená} (strmější než $x^2$).
+    \item $\mathbf{0 < |a| < 1}$: parabola je \textbf{rozšířená} (plošší než $x^2$).
+  \end{itemize}
+  \item \textbf{Parametr $x_0$ (posun po ose $x$):} $(x - x_0)^2 \Rightarrow$ posun vrcholu doprava; $(x + x_0)^2 \Rightarrow$ doleva. Osa paraboly je $x = x_0$.
+  \item \textbf{Parametr $y_0$ (posun po ose $y$):} $+ y_0 \Rightarrow$ posun vrcholu nahoru; $- y_0 \Rightarrow$ posun dolů.
+  \item \textbf{Parametr $c$:} průsečík s osou $y$: $\mathbf{P_y = [0; c]}$.
+  \item \textbf{Diskriminant $D = b^2 - 4ac$ a průsečíky $P_x$:}
+  \begin{itemize}
+    \item $D > 0 \Rightarrow$ 2 průsečíky $x_{1,2} = \frac{-b \pm \sqrt{D}}{2a}$.
+    \item $D = 0 \Rightarrow$ 1 bod dotyku (vrchol leží přímo na ose $x$).
+    \item $D < 0 \Rightarrow$ neprotíná osu $x$ (celá leží nad/pod osou).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.68, >=stealth]
+  \draw[->, gray!70] (-2.8,0) -- (3.2,0) node[right, black] {\scriptsize $x$};
+  \draw[->, gray!70] (0,-2.2) -- (0,3) node[above, black] {\scriptsize $y$};
+  % a > 0
+  \draw[plotblue, thick, domain=-1.9:1.9] plot (\x, {0.75*\x*\x - 1.5});
+  \node[plotblue] at (2.2, 1.2) {\scriptsize $a>0$};
+  \filldraw[plotblue] (0,-1.5) circle (1.6pt) node[below] {\scriptsize $V_1[x_0;y_0]$};
+  % a < 0
+  \draw[plotred, thick, domain=-1.9:1.9] plot (\x, {-0.75*\x*\x + 2});
+  \node[plotred] at (2.2, -0.8) {\scriptsize $a<0$};
+  \filldraw[plotred] (0,2) circle (1.6pt) node[above] {\scriptsize $V_2[x_0;y_0]$};
+  % osa paraboly
+  \draw[gray, dotted] (0,-2) -- (0,2.8);
+\end{tikzpicture}
+\end{center}
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% OKRUH 5: ABSOLUTNÍ HODNOTA V ROVNICÍCH A GRAFECH
+%=============================================================================
+\begin{tcolorbox}[secbox,title=OKRUH 5: ABSOLUTNÍ HODNOTA V ROVNICÍCH, NEROVNICÍCH A GRAFECH]
+\begin{multicols}{3}
+
+\textbf{1. Lineární s abs. hodnotou:}
+\[y = a|x - x_0| + y_0\]
+\begin{itemize}
+  \item \textbf{Vrchol (bod zlomu):} $V[x_0; y_0]$.
+  \item $\mathbf{a > 0}$: tvar $\bigvee$, ramena směřují nahoru.
+  \item $\mathbf{a < 0}$: tvar $\bigwedge$, ramena směřují dolů.
+  \item Směrnice pravého ramene je $+a$, levého $-a$.
+  \item $x_0$ posunuje hrot po $x$, $y_0$ po $y$.
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6, >=stealth]
+  \draw[->, gray!70] (-2,0) -- (3,0) node[right, black] {\tiny $x$};
+  \draw[->, gray!70] (0,-1.5) -- (0,2.5) node[above, black] {\tiny $y$};
+  \draw[plotblue, thick] (-1.5, 2) -- (1, -0.8) -- (2.8, 2);
+  \filldraw[plotblue] (1,-0.8) circle (1.5pt) node[below] {\tiny $V[x_0;y_0]$};
+  \draw[gray, dashed] (1,-1.2) -- (1,2.2);
+\end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+\textbf{2. Transformace $|f(x)|$ vs $f(|x|)$:}
+\begin{itemize}
+  \item $\mathbf{y = |f(x)|}$:
+  \begin{itemize}
+    \item Vše pod osou $x$ ($y < 0$) se osově překlopí nahoru podle osy $x$.
+    \item $H_f \subseteq \langle 0; \infty)$.
+  \end{itemize}
+  \item $\mathbf{y = f(|x|)}$:
+  \begin{itemize}
+    \item Smaže se levá polovina grafu ($x < 0$).
+    \item Pravá polovina ($x \ge 0$) se zrcadlí podle osy $y$ do záporu $\Rightarrow$ funkce je vždy \textbf{sudá}.
+  \end{itemize}
+  \item $\mathbf{y = -|f(x)|}$: celé překlopeno pod osu $x$.
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55, >=stealth]
+  \draw[->, gray!70] (-2.2,0) -- (3.5,0) node[right, black] {\tiny $x$};
+  \draw[->, gray!70] (0,-1.8) -- (0,2.5) node[above, black] {\tiny $y$};
+  % původní fce čárkovaně
+  \draw[gray!60, dashed, domain=-0.5:3] plot (\x, {(\x-1)*(\x-2.5)});
+  % |f(x)|
+  \draw[plotred, thick, domain=-0.5:1] plot (\x, {(\x-1)*(\x-2.5)});
+  \draw[plotred, thick, domain=1:2.5] plot (\x, {-(\x-1)*(\x-2.5)});
+  \draw[plotred, thick, domain=2.5:3] plot (\x, {(\x-1)*(\x-2.5)});
+  \node[plotred] at (1.75, 1.2) {\tiny $|f(x)|$};
+\end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+\textbf{3. Součet abs. hodnot a diskuze:}
+\textbf{Metoda nulových bodů:}
+Např. $f(x) = |x+1| - 2|x-2|$:
+\begin{enumerate}
+  \item Nulové body $x = -1$ a $x = 2$ rozdělí $\mathbb{R}$ na intervaly $(-\infty;-1), \langle-1;2), \langle2;\infty)$.
+  \item V každém intervalu odstraníme abs. hodnoty podle znaménka vnitřku.
+  \item Vznikne spojitá lomená čára složená z lineárních úseků.
+\end{enumerate}
+\textbf{Grafické řešení rovnic $f(x) = m$:}
+\begin{itemize}
+  \item Hledáme průsečíky grafu $y = f(x)$ s vodorovnou přímkou $y = m$.
+  \item Počet průsečíků = počet řešení rovnice pro daný parametr $m$.
+\end{itemize}
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% OKRUH 6: LINEÁRNÍ LOMENÁ FUNKCE A MOCNINNÉ FUNKCE
+%=============================================================================
+\begin{tcolorbox}[secbox,title=OKRUH 6: LINEÁRNÍ LOMENÁ FUNKCE A MOCNINNÉ FUNKCE -- PARAMETRY A GRAFY]
+\begin{multicols}{2}
+
+%--- LINEÁRNÍ LOMENÁ FUNKCE ---
+\textbf{\large 1. Lineární lomená funkce: $y = \frac{ax + b}{cx + d}$ ($c \neq 0, ad - bc \neq 0$)}
+\textbf{Středový tvar:} $\mathbf{y = \frac{k}{x - x_0} + y_0}$ (získáme dělením čitatele jmenovatelem)
+\begin{itemize}
+  \item \textbf{Střed hyperboly:} $\mathbf{S[x_0; y_0]} = \left[-\frac{d}{c};\; \frac{a}{c}\right]$.
+  \item \textbf{Asymptoty (přímky, k nimž se křivka nekonečně blíží):}
+  \begin{itemize}
+    \item \textbf{Svislá asymptota:} $\mathbf{x = x_0 = -\frac{d}{c}}$ (nulový bod jmenovatele, $D_f = \mathbb{R} \setminus \{x_0\}$).
+    \item \textbf{Vodorovná asymptota:} $\mathbf{y = y_0 = \frac{a}{c}}$ (limita pro $x \to \pm\infty$, $H_f = \mathbb{R} \setminus \{y_0\}$).
+  \end{itemize}
+  \item \textbf{Parametr $k$ (resp. determinant $ad - bc$):}
+  \begin{itemize}
+    \item $\mathbf{k > 0}$ (odpovídá $bc - ad > 0$): větve leží v \textbf{I. a III. kvadrantu} vzhledem k asymptotám. Funkce je \textbf{klesající} na $(-\infty; x_0)$ i na $(x_0; \infty)$.
+    \item $\mathbf{k < 0}$ (odpovídá $bc - ad < 0$): větve leží v \textbf{II. a IV. kvadrantu} vzhledem k asymptotám. Funkce je \textbf{rostoucí} na obou intervalech.
+    \item $\mathbf{|k|}$: určuje \textbf{vzdálenost} vrcholů hyperboly od středu $S$.
+  \end{itemize}
+  \item \textbf{Průsečíky:} $P_y = \left[0; \frac{b}{d}\right]$, $P_x = \left[-\frac{b}{a}; 0\right]$.
+  \item \textbf{Inverzní funkce:} $f^{-1}(x) = \frac{-dx + b}{cx - a}$ (zamění se koeficienty $a, d$ s opačnými znaménky).
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72, >=stealth]
+  \draw[->, gray!70] (-2.5,0) -- (3.2,0) node[right, black] {\scriptsize $x$};
+  \draw[->, gray!70] (0,-2.3) -- (0,2.8) node[above, black] {\scriptsize $y$};
+  % asymptoty
+  \draw[plotred, densely dashed, thick] (0.8,-2.3) -- (0.8,2.8) node[above] {\scriptsize $x=x_0$};
+  \draw[plotgreen, densely dashed, thick] (-2.5,0.7) -- (3.2,0.7) node[right] {\scriptsize $y=y_0$};
+  \filldraw[black] (0.8,0.7) circle (1.8pt) node[below left=-1pt] {\scriptsize $S$};
+  % k > 0
+  \draw[plotblue, thick, domain=1.15:2.8, samples=50] plot (\x, {0.45/(\x - 0.8) + 0.7});
+  \draw[plotblue, thick, domain=-2.2:0.45, samples=50] plot (\x, {0.45/(\x - 0.8) + 0.7});
+  \node[plotblue] at (2.2, 1.8) {\tiny $k>0$ (I.)};
+  \node[plotblue] at (-0.6, -0.4) {\tiny $k>0$ (III.)};
+  % k < 0
+  \draw[plotorange, thick, domain=1.15:2.8, samples=50] plot (\x, {-0.45/(\x - 0.8) + 0.7});
+  \draw[plotorange, thick, domain=-2.2:0.45, samples=50] plot (\x, {-0.45/(\x - 0.8) + 0.7});
+  \node[plotorange] at (2.2, -0.2) {\tiny $k<0$ (IV.)};
+  \node[plotorange] at (-0.8, 1.6) {\tiny $k<0$ (II.)};
+\end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+%--- MOCNINNÉ FUNKCE ---
+\textbf{\large 2. Mocninné funkce a odmocniny (souhrnná tabulka)}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{2.5pt}
+{\footnotesize
+\begin{tabular}{p{1.6cm}p{1.2cm}p{1.2cm}p{1.7cm}c}
+\toprule
+\textbf{Funkce} & $\mathbf{D(f)}$ & $\mathbf{H(f)}$ & \textbf{Vlastnosti} & \textbf{Mini-graf} \\
+\midrule
+$y = x^n$\newline ($n$ sudé přir.) & $\mathbb{R}$ & $\langle 0; \infty)$ & \textbf{Sudá}, klesá v $\mathbb{R}^-$, roste v $\mathbb{R}^+$, vrchol $[0;0]$. &
+\begin{tikzpicture}[scale=0.36, baseline=1mm]
+  \draw[->, gray!60] (-1.4,0) -- (1.4,0); \draw[->, gray!60] (0,-0.3) -- (0,1.7);
+  \draw[plotblue, thick, domain=-1.15:1.15] plot (\x, {\x*\x});
+\end{tikzpicture} \\
+\midrule
+$y = x^n$\newline ($n$ liché přir.) & $\mathbb{R}$ & $\mathbb{R}$ & \textbf{Lichá}, stále rostoucí, inflexe $[0;0]$. &
+\begin{tikzpicture}[scale=0.36, baseline=1mm]
+  \draw[->, gray!60] (-1.4,0) -- (1.4,0); \draw[->, gray!60] (0,-1.2) -- (0,1.4);
+  \draw[plotred, thick, domain=-1.05:1.05] plot (\x, {\x*\x*\x});
+\end{tikzpicture} \\
+\midrule
+$y = x^{-n} = \frac{1}{x^n}$\newline ($n$ sudé přir.) & $\mathbb{R} \setminus \{0\}$ & $(0; \infty)$ & \textbf{Sudá}, tvar „sopka“, asymptoty $x=0, y=0$. &
+\begin{tikzpicture}[scale=0.36, baseline=1mm]
+  \draw[->, gray!60] (-1.4,0) -- (1.4,0); \draw[->, gray!60] (0,-0.3) -- (0,1.7);
+  \draw[plotgreen, thick, domain=0.5:1.35] plot (\x, {0.3/(\x*\x)});
+  \draw[plotgreen, thick, domain=-1.35:-0.5] plot (\x, {0.3/(\x*\x)});
+\end{tikzpicture} \\
+\midrule
+$y = x^{-n} = \frac{1}{x^n}$\newline ($n$ liché přir.) & $\mathbb{R} \setminus \{0\}$ & $\mathbb{R} \setminus \{0\}$ & \textbf{Lichá}, rovnoosá hyperbola, asymptoty $x=0, y=0$. &
+\begin{tikzpicture}[scale=0.36, baseline=1mm]
+  \draw[->, gray!60] (-1.4,0) -- (1.4,0); \draw[->, gray!60] (0,-1.3) -- (0,1.3);
+  \draw[plotpurple, thick, domain=0.35:1.35] plot (\x, {0.35/\x});
+  \draw[plotpurple, thick, domain=-1.35:-0.35] plot (\x, {0.35/\x});
+\end{tikzpicture} \\
+\midrule
+$y = \sqrt[n]{x}$\newline ($n$ sudé) & $\langle 0; \infty)$ & $\langle 0; \infty)$ & Rostoucí, inverzní k $x^n$ na $\langle0;\infty)$. &
+\begin{tikzpicture}[scale=0.36, baseline=1mm]
+  \draw[->, gray!60] (-0.3,0) -- (1.5,0); \draw[->, gray!60] (0,-0.3) -- (0,1.4);
+  \draw[plotblue, thick, domain=0:1.4, samples=40] plot (\x, {sqrt(\x)});
+\end{tikzpicture} \\
+\midrule
+$y = \sqrt[n]{x}$\newline ($n$ liché) & $\mathbb{R}$ & $\mathbb{R}$ & \textbf{Lichá}, rostoucí na celém $\mathbb{R}$, inverzní k $x^n$. &
+\begin{tikzpicture}[scale=0.36, baseline=1mm]
+  \draw[->, gray!60] (-1.4,0) -- (1.4,0); \draw[->, gray!60] (0,-1.2) -- (0,1.2);
+  \draw[plotorange, thick, domain=0:1.35, samples=40] plot (\x, {(\x)^(1/3)});
+  \draw[plotorange, thick, domain=-1.35:0, samples=40] plot (\x, {-((-\x)^(1/3))});
+\end{tikzpicture} \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% OKRUHY 1, 2, 3: ALGEBRA, SOUSTAVY, KVADRATICKÉ ROVNICE
+%=============================================================================
+\begin{tcolorbox}[secbox,title=OKRUHY 1--3: ALGEBRAICKÉ VÝRAZY, SOUSTAVY ROVNIC A KVADRATICKÉ ROVNICE]
+\begin{multicols}{3}
+
+%--- OKRUH 1 ---
+\textbf{\large Okruh 1: Výrazy a odmocniny}
+\vspace{1mm}
+
+\textbf{Algebraické identity:}
+\begin{itemize}
+  \item $(A \pm B)^3 = A^3 \pm 3A^2B + 3AB^2 \pm B^3$
+  \item $A^3 \pm B^3 = (A \pm B)(A^2 \mp AB + B^2)$
+  \item $a^{\frac{m}{n}} = \sqrt[n]{a^m}$, \quad $a^{-n} = \frac{1}{a^n}$
+  \item $\sqrt[n]{ab} = \sqrt[n]{a} \sqrt[n]{b}$, \quad $\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}$
+\end{itemize}
+\textbf{Usměrňování zlomků:}
+\begin{itemize}
+  \item $\frac{C}{\sqrt{A} \pm \sqrt{B}} = \frac{C(\sqrt{A} \mp \sqrt{B})}{A - B}$
+  \item $\frac{C}{\sqrt[3]{A} \pm \sqrt[3]{B}} = \frac{C(\sqrt[3]{A^2} \mp \sqrt[3]{AB} + \sqrt[3]{B^2})}{A \pm B}$
+\end{itemize}
+\textbf{Iracionální rovnice:}
+\begin{itemize}
+  \item Umocnění $x = y \Rightarrow x^2 = y^2$ je důsledková úprava $\Rightarrow$ \textbf{nutná zkouška dosazením}!
+  \item Nebo soustava: $\sqrt{f(x)} = g(x) \Leftrightarrow f(x) = [g(x)]^2 \;\land\; g(x) \ge 0$.
+\end{itemize}
+\textbf{Substituce u více odmocnin:}
+U rovnic typu $\sqrt{3x^2+5x+8} - \sqrt{3x^2+5x+1} = 1$:
+\begin{enumerate}
+  \item Zvol $u = 3x^2+5x+1 \Rightarrow \sqrt{u+7} - \sqrt{u} = 1$
+  \item Převeď: $\sqrt{u+7} = 1 + \sqrt{u}$
+  \item Umocni: $u+7 = 1 + 2\sqrt{u} + u \Rightarrow 6 = 2\sqrt{u} \Rightarrow \sqrt{u} = 3 \Rightarrow u = 9$
+  \item Zpětně: $3x^2+5x+1 = 9 \Rightarrow 3x^2+5x-8 = 0 \Rightarrow x_1 = 1, x_2 = -\frac{8}{3}$.
+\end{enumerate}
+
+\columnbreak
+
+%--- OKRUH 2 ---
+\textbf{\large Okruh 2: Soustavy a nerovnice}
+\vspace{1mm}
+
+\textbf{Lineární soustavy $3 \times 3$:}
+\begin{itemize}
+  \item Gauss: trojúhelníkový tvar eliminací.
+  \item Cramer: $x = \frac{D_x}{D}$, $y = \frac{D_y}{D}$, $z = \frac{D_z}{D}$ (pro $D \neq 0$).
+\end{itemize}
+\textbf{Kirchhoff a nelineární soustavy:}
+\begin{itemize}
+  \item Sériově: $R_s = R_1 + R_2$, Paralelně: $\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} \Rightarrow R_1 R_2 = R_p R_s$.
+  \item Kvadratická pro $R_1$: $R_1^2 - R_s R_1 + R_p R_s = 0$.
+\end{itemize}
+\textbf{Podílové nerovnice -- NULOVÉ BODY:}
+\begin{itemize}
+  \item \textbf{ZÁKAZ násobit jmenovatelem s neznámou!}
+  \item Vše na jednu stranu: $\frac{P(x)}{Q(x)} \ge 0$.
+  \item Nulové body čitatele i jmenovatele na číselnou osu, střídání znamének.
+\end{itemize}
+\textbf{Rovnice s parametrem $p$: $A(p)x = B(p)$}
+\begin{center}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{3pt}
+{\footnotesize
+\begin{tabular}{lll}
+\toprule
+$A(p) \neq 0$ & 1 řeš. & $x = \frac{B(p)}{A(p)}$ \\
+$A(p) = 0 \land B(p) = 0$ & $\infty$ řeš. & $x \in \mathbb{R}$ \\
+$A(p) = 0 \land B(p) \neq 0$ & 0 řeš. & $K = \emptyset$ \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+\columnbreak
+
+%--- OKRUH 3 ---
+\textbf{\large Okruh 3: Kvadratické rovnice}
+\vspace{1mm}
+
+\textbf{Rovnice:} $ax^2 + bx + c = 0$, $D = b^2 - 4ac$
+\begin{itemize}
+  \item $D > 0 \Rightarrow 2$ reálné kořeny: $x_{1,2} = \frac{-b \pm \sqrt{D}}{2a}$
+  \item $D = 0 \Rightarrow 1$ dvojnásobný: $x_1 = x_2 = -\frac{b}{2a}$
+  \item $D < 0 \Rightarrow 0$ v $\mathbb{R}$, 2 komplexní v $\mathbb{C}$: $x_{1,2} = -\frac{b}{2a} \pm i \frac{\sqrt{|D|}}{2a}$
+\end{itemize}
+\textbf{Viètovy vzorce (pro $x^2 + px + q = 0$):}
+\[x_1 + x_2 = -\frac{b}{a} = -p, \qquad x_1 x_2 = \frac{c}{a} = q\]
+\textbf{Klíčové odvozené identity:}
+\begin{itemize}
+  \item $x_1^2 + x_2^2 = (x_1+x_2)^2 - 2x_1x_2 = \frac{b^2 - 2ac}{a^2}$
+  \item $\frac{1}{x_1} + \frac{1}{x_2} = \frac{x_1 + x_2}{x_1 x_2} = -\frac{b}{c}$
+  \item $(x_1 - x_2)^2 = (x_1+x_2)^2 - 4x_1x_2 = \frac{D}{a^2}$
+  \item $|x_1 - x_2| = \frac{\sqrt{D}}{|a|}$
+\end{itemize}
+\textbf{Transformace kořenů:}
+\begin{itemize}
+  \item Dvojnásobné kořeny $y_i = 2x_i \Rightarrow a\left(\frac{y}{2}\right)^2 + b\left(\frac{y}{2}\right) + c = 0$.
+  \item Posunuté $y_i = x_i + d \Rightarrow$ dosadit $x = y - d$.
+\end{itemize}
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% OKRUHY 24--25: KOMBINATORIKA A BINOMICKÁ VĚTA
+%=============================================================================
+\begin{tcolorbox}[secbox,title=OKRUHY 24--25: KOMBINATORIKA A BINOMICKÁ VĚTA]
+
+\textbf{1. Kombinatorická rozhodovací matice (výběr $k$ prvků z $n$)}
+\vspace{1mm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+{\footnotesize
+\begin{tabularx}{\linewidth}{l l l l X}
+\toprule
+\textbf{Typ výběru} & \textbf{Záleží na pořadí?} & \textbf{Bez opakování} & \textbf{S opakováním} & \textbf{Typický příklad v testu} \\
+\midrule
+\textbf{Variace} & \textbf{ANO} ($k$-tice z $n$) & $V(k,n) = \frac{n!}{(n-k)!}$ & $V'(k,n) = n^k$ & Hesla, PIN, kódy, umístění na 1.--3. místě \\
+\textbf{Permutace} & \textbf{ANO} ($n$ z $n$, $k=n$) & $P(n) = n!$ & $P'(k_1,\dots) = \frac{n!}{k_1! \cdots k_m!}$ & Anagramy (přesmyčky slov s opak. písmeny), řazení lidí \\
+\textbf{Kombinace} & \textbf{NE} (nezáleží na pořadí) & $K(k,n) = \binom{n}{k} = \frac{n!}{k!(n-k)!}$ & $\mathbf{K'(k,n) = \binom{n+k-1}{k}}$ & Losování čísel (Sportka), výběr mincí ze 4 druhů \\
+\bottomrule
+\end{tabularx}}
+\end{center}
+
+\vspace{1mm}
+
+\begin{multicols}{2}
+
+\textbf{2. Binomická věta a obecný člen rozvoje:}
+\[(a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k, \qquad A_{k+1} = \binom{n}{k} a^{n-k} b^k\]
+
+\textbf{Příklad: Člen bez $x$ ve výrazu $\left(2x^3 - \frac{1}{x^2}\right)^{10}$:}
+\begin{itemize}
+  \item $A_{k+1} = \binom{10}{k} (2x^3)^{10-k} (-x^{-2})^k = \binom{10}{k} 2^{10-k} (-1)^k x^{30-5k}$
+  \item Exponent u $x$ musí být nulový: $30 - 5k = 0 \Rightarrow k = 6$.
+  \item Hodnota členu: $A_7 = \binom{10}{6} 2^4 (-1)^6 = 210 \cdot 16 \cdot 1 = \mathbf{3360}$.
+\end{itemize}
+
+\columnbreak
+
+\textbf{3. Vlastnosti kombinačních čísel a Moivre:}
+\begin{itemize}
+  \item $\binom{n}{k} = \binom{n}{n-k}$, \quad $\binom{n}{0} = \binom{n}{n} = 1$, \quad $\binom{n}{1} = n$
+  \item Součet sousedních: $\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}$ (Pascalův trojúhelník)
+  \item Moivreova věta: $(\cos x + i \sin x)^n = \cos(nx) + i \sin(nx)$
+  \item $\cos 3x = 4\cos^3 x - 3\cos x, \quad \sin 3x = 3\sin x - 4\sin^3 x$
+\end{itemize}
+
+\begin{tcolorbox}[alertbox]
+\textbf{Pozor na častou chybu (mince):}\\
+Výběr 3 mincí ze 4 druhů je $K'(3, 4) = \binom{4+3-1}{3} = \binom{6}{3} = \mathbf{20}$ (nikoliv 120!).
+\end{tcolorbox}
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% OKRUH 26: PRAVDĚPODOBNOST
+%=============================================================================
+\begin{tcolorbox}[secbox,title=OKRUH 26: PRAVDĚPODOBNOST (KLASICKÁ, KOMBINAČNÍ, OPAČNÝ JEV, BERNOULLI)]
+\begin{multicols}{3}
+
+\textbf{1. Základní pravidla a operace}
+\begin{itemize}
+  \item \textbf{Klasická definice:} $P(A) = \frac{m}{n} = \frac{\text{počet příznivých}}{\text{počet všech možných}}$
+  \item \textbf{Opačný jev:} $P(A') = 1 - P(A)$.\\
+  \emph{Zlaté pravidlo „alespoň jeden“:}
+  \[P(\ge 1) = 1 - P(0)\]
+  (Použít vždy, když se v zadání objeví slova „alespoň jeden“!).
+  \item \textbf{Nezávislé jevy (násobení):}\\
+  $P(A \cap B) = P(A) \cdot P(B)$ (hody kostkou, vracení koulí).
+  \item \textbf{Sjednocení jevů (sčítání):}\\
+  $P(A \cup B) = P(A) + P(B) - P(A \cap B)$\\
+  (pro neslučitelné jevy je $P(A \cap B) = 0$).
+  \item \textbf{Spolehlivost bloků / schémat:}\\
+  Sériově: $P = P_1 \cdot P_2$\\
+  Paralelně: $P = 1 - (1 - P_1)(1 - P_2)$.
+\end{itemize}
+
+\columnbreak
+
+\textbf{2. Tahání bez vracení (osudí, karty, zkoušení)}
+\textbf{Hypergeometrický model (kombinační čísla):}
+\[P(A) = \frac{\binom{M}{m} \cdot \binom{N - M}{n - m}}{\binom{N}{n}}\]
+Kde $N$ je celkový počet, $M$ je počet požadovaného druhu, $n$ taháme celkem, $m$ chceme požadovaných.
+
+\textbf{Vzor 1 (koule v osudí):}
+15 červených, 6 bílých ($N=21$). Taháme 3 koule ($n=3$). Pravděpodobnost, že budou 2 bílé a 1 červená:
+\[P = \frac{\binom{6}{2} \cdot \binom{15}{1}}{\binom{21}{3}} = \frac{15 \cdot 15}{1330} = \frac{225}{1330} = \frac{\mathbf{45}}{\mathbf{266}} \approx \mathbf{16.9\%}\]
+
+\textbf{Vzor 2 (karty mariáš 32):}
+Taháme 3 karty. Pravděpodobnost kulového esa:
+\[P = \frac{\binom{1}{1} \cdot \binom{31}{2}}{\binom{32}{3}} = \frac{1 \cdot 465}{4960} = \frac{465}{4960} \approx \mathbf{9.38\%}\]
+
+\columnbreak
+
+\textbf{3. Bernoulliovo schéma (opakované pokusy)}
+Pravděpodobnost, že v $n$ nezávislých pokusech nastane jev s pravděpodobností $p$ právě $k$-krát ($q = 1 - p$):
+\[P_n(k) = \binom{n}{k} p^k (1 - p)^{n-k}\]
+
+\textbf{Vzorový příklad (střelec / zásahy):}
+Střelec zasahuje terč s $p = 0.9$ ($q = 0.1$), střílí $n = 3$ rány:
+\begin{itemize}
+  \item \textbf{Právě 2 zásahy:}
+  \[P(2) = \binom{3}{2} (0.9)^2 (0.1)^1 = 3 \cdot 0.81 \cdot 0.1 = \mathbf{0.243}\]
+  \item \textbf{Alespoň 1 zásah (přes opačný jev!):}
+  \[P(\ge 1) = 1 - P(0) = 1 - (0.1)^3 = 1 - 0.001 = \mathbf{0.999}\]
+  \item \textbf{Alespoň 2 zásahy ($P(2) + P(3)$):}
+  \[P(\ge 2) = 0.243 + (0.9)^3 = 0.243 + 0.729 = \mathbf{0.972}\]
+  \item \textbf{Nejvýše 2 zásahy:}
+  \[P(\le 2) = 1 - P(3) = 1 - 0.729 = \mathbf{0.271}\]
+\end{itemize}
+
+\end{multicols}
+\end{tcolorbox}
+
+\end{document}

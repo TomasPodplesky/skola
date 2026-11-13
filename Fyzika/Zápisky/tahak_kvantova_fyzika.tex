@@ -1,0 +1,384 @@
+\documentclass[9pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\tcbuselibrary{skins,breakable}
+
+%--- Geometry ---
+\geometry{a4paper, left=0.8cm, right=0.8cm, top=0.8cm, bottom=0.8cm}
+\pagestyle{empty}
+
+%--- Compact formatting ---
+\renewcommand{\familydefault}{\sfdefault}
+\setlist{nosep, leftmargin=3.5mm}
+\setlength{\columnsep}{4mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5pt}
+
+%--- Colors ---
+\definecolor{primary}{RGB}{15,45,85}
+\definecolor{secondary}{RGB}{170,30,30}
+\definecolor{plotblue}{RGB}{0,102,204}
+\definecolor{plotred}{RGB}{204,20,20}
+\definecolor{plotgreen}{RGB}{0,145,65}
+\definecolor{plotorange}{RGB}{220,105,0}
+\definecolor{plotpurple}{RGB}{125,25,140}
+\definecolor{boxbg}{RGB}{246,248,252}
+
+%--- tcolorbox styles ---
+\tcbset{
+  basebox/.style={enhanced,boxrule=0.6pt,arc=1.2mm,left=1.5mm,right=1.5mm,top=1mm,bottom=1mm,
+    coltitle=white,fonttitle=\bfseries\footnotesize},
+  secbox/.style={basebox,colback=boxbg,colframe=primary,breakable},
+  alertbox/.style={basebox,colback=red!4!white,colframe=secondary},
+  rulebox/.style={basebox,colback=green!4!white,colframe=plotgreen!80!black}
+}
+
+\begin{document}
+
+%=============================================================================
+% HLAVNÍ TITULEK
+%=============================================================================
+\begin{tcolorbox}[colback=primary,colframe=primary,arc=1mm,left=2mm,right=2mm,top=1mm,bottom=1mm]
+\color{white}
+\begin{center}
+{\bfseries\large KOMPLETNÍ TAHÁK NA KVANTOVOU FYZIKU}\\[0.5mm]
+{\footnotesize SPŠE Plzeň -- Technické lyceum / Kybernetika \quad$\vert$\quad Přehled teorií, konstant, vzorců, grafů a typových příkladů}
+\end{center}
+\end{tcolorbox}
+
+%=============================================================================
+% 1. FUNDAMENTÁLNÍ KONSTANTY A ZÁKLADNÍ VZTAHY FOTONU
+%=============================================================================
+\begin{tcolorbox}[secbox,title=1. FUNDAMENTÁLNÍ FYZIKÁLNÍ KONSTANTY A ZÁKLADNÍ KVANTOVÉ VZTAHY]
+\begin{multicols}{2}
+
+\textbf{Tabulka fundamentálních konstant:}
+\vspace{1mm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{3pt}
+{\footnotesize
+\begin{tabularx}{\linewidth}{l l l X}
+\toprule
+\textbf{Veličina} & \textbf{Značka} & \textbf{Hodnota} & \textbf{Význam / Poznámka} \\
+\midrule
+Planckova konstanta & $h$ & $6{,}626 \cdot 10^{-34}\;\text{J}\cdot\text{s}$ & Kvantum akce ($E = h\nu$) \\
+Redukovaná Planckova k. & $\hbar = \frac{h}{2\pi}$ & $1{,}055 \cdot 10^{-34}\;\text{J}\cdot\text{s}$ & Relace neurčitosti, Diracovo $h$ \\
+Rychlost světla ve vakuu & $c$ & $3 \cdot 10^8\;\text{m/s}$ & Rychlost fotonů ($c = \lambda\nu$) \\
+Elementární náboj & $e$ & $1{,}602 \cdot 10^{-19}\;\text{C}$ & $1\;\text{eV} = 1{,}602 \cdot 10^{-19}\;\text{J}$ \\
+Klidová hmotnost elektronu & $m_e$ & $9{,}109 \cdot 10^{-31}\;\text{kg}$ & Hmotnost elektronu v atomu \\
+Permitivita vakua & $\varepsilon_0$ & $8{,}854 \cdot 10^{-12}\;\text{F/m}$ & Coulombův elektrostatický zákon \\
+Wienova konstanta & $b$ & $2{,}898 \cdot 10^{-3}\;\text{m}\cdot\text{K}$ & Posun maxima záření AČT \\
+Stefanova-Boltzmannova k. & $\sigma$ & $5{,}670 \cdot 10^{-8}\;\text{W}/(\text{m}^2\text{K}^4)$ & Celkové vyzařování tělesa \\
+Rydbergova energie & $E_1$ & $-13{,}606\;\text{eV}$ & Základní hladina vodíku ($n=1$) \\
+Bohrův poloměr & $a_0 = r_1$ & $5{,}292 \cdot 10^{-11}\;\text{m}$ & Poloměr 1. dráhy vodíku ($0{,}053\;\text{nm}$) \\
+Comptonova vlnová délka & $\lambda_C$ & $2{,}426 \cdot 10^{-12}\;\text{m}$ & $\lambda_C = \frac{h}{m_e c}$ (Comptonův rozptyl) \\
+\bottomrule
+\end{tabularx}}
+\end{center}
+
+\columnbreak
+
+\textbf{Kvantová povaha elektromagnetického záření (foton):}
+\begin{itemize}
+  \item \textbf{Energie fotonu (Planck--Einstein):}
+  \[E = h\nu = \hbar\omega = \frac{hc}{\lambda}\]
+  \item \textbf{Vlnová rovnice záření:}
+  \[c = \lambda \cdot \nu \implies \nu = \frac{c}{\lambda}, \quad \lambda = \frac{c}{\nu}\]
+  \item \textbf{Hybnost fotonu ($m_0 = 0$):}
+  \[p = \frac{E}{c} = \frac{h}{\lambda} = \frac{h\nu}{c}\]
+  \item \textbf{Dynamická (relativistická) hmotnost fotonu:}
+  \[m_{\text{fot}} = \frac{E}{c^2} = \frac{h\nu}{c^2} = \frac{h}{\lambda c} \quad (\text{klidová } m_0 = 0!)\]
+\end{itemize}
+
+\begin{tcolorbox}[rulebox]
+\textbf{Rychlý přepočet jednotek energie v testu:}\\
+$1\;\text{eV} = 1{,}602 \cdot 10^{-19}\;\text{J} \quad \Longleftrightarrow \quad 1\;\text{J} \approx 6{,}242 \cdot 10^{18}\;\text{eV}$\\
+Součin $h \cdot c \approx 1{,}986 \cdot 10^{-25}\;\text{J}\cdot\text{m} \approx 1240\;\text{eV}\cdot\text{nm}$.\\
+\emph{Trik pro vlnovou délku fotonu:} $\lambda\,[\text{nm}] \approx \frac{1240}{E\,[\text{eV}]}$.
+\end{tcolorbox}
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% 2. KORPUSKULÁRNĚ-VLNOVÝ DUALISMUS A FOTOEFEKT
+%=============================================================================
+\begin{tcolorbox}[secbox,title=2. KORPUSKULÁRNĚ-VLNOVÝ DUALISMUS, FOTOELEKTRICKÝ JEV A COMPTONŮV ROZPTYL]
+\begin{multicols}{3}
+
+\textbf{1. de Broglieovy vlny hmoty}
+Každá částice s hybností $p = mv$ vykazuje vlnové vlastnosti:
+\[\mathbf{\lambda = \frac{h}{p} = \frac{h}{m v}}\]
+\textbf{Elektron urychlený napětím $U$:}
+\begin{itemize}
+  \item Kinetická energie: $E_k = eU = \frac{p^2}{2m_e}$
+  \item Hybnost: $p = \sqrt{2m_e e U}$
+  \item Vlnová délka: $\mathbf{\lambda = \frac{h}{\sqrt{2m_e e U}}}$
+\end{itemize}
+\emph{Důkaz:} Difrakce elektronů na krystalové mřížce niklu (Davisson--Germer 1927).
+
+\columnbreak
+
+\textbf{2. Fotoelektrický jev (Einstein 1905)}
+Foton předá veškerou energii $h\nu$ jednomu elektronu:
+\[\mathbf{h\nu = W_v + E_{k,\max} = W_v + \frac{1}{2}m_e v_{\max}^2}\]
+\begin{itemize}
+  \item $W_v$: výstupní práce materiálu [$\text{eV}$ nebo $\text{J}$].
+  \item \textbf{Mezní (červená) frekvence / vlnová délka:}
+  \[\nu_0 = \frac{W_v}{h}, \qquad \mathbf{\lambda_0 = \frac{hc}{W_v}}\]
+  Nastává pouze pro $\nu \ge \nu_0$ (resp. $\lambda \le \lambda_0$).
+  \item \textbf{Brzdné napětí $U_z$ (zastavení proudu):}
+  \[e U_z = E_{k,\max} \implies \mathbf{U_z = \frac{h}{e}\nu - \frac{W_v}{e}}\]
+  \item $E_k$ závisí \textbf{pouze na frekvenci $\nu$}, nikoliv na intenzitě světla! Intenzita určuje pouze počet vyražených elektronů (fotoproud $I$).
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.62, >=stealth]
+  \draw[->, gray!70] (-0.3,0) -- (3.8,0) node[right, black] {\tiny $\nu$};
+  \draw[->, gray!70] (0,-1.4) -- (0,2.2) node[above, black] {\tiny $E_k$};
+  \draw[plotblue, thick] (1.3,0) -- (3.3,1.8) node[right] {\tiny směrnice $= h$};
+  \draw[plotblue, dashed] (0,-1.1) -- (1.3,0);
+  \filldraw[black] (1.3,0) circle (1.3pt) node[below] {\tiny $\nu_0$};
+  \filldraw[plotred] (0,-1.1) circle (1.3pt) node[left] {\tiny $-W_v$};
+\end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+\textbf{3. Comptonův jev (rozptyl)}
+Srážka fotonu rentgenového/gama záření s volným elektronem:
+\[\mathbf{\Delta\lambda = \lambda' - \lambda = \lambda_C (1 - \cos\theta)}\]
+\begin{itemize}
+  \item $\lambda$: vlnová délka dopadajícího fotonu.
+  \item $\lambda'$: vlnová délka rozptýleného fotonu ($\lambda' > \lambda$).
+  \item $\theta$: úhel rozptylu fotonu.
+  \item $\lambda_C = \frac{h}{m_e c} \approx 2{,}426 \cdot 10^{-12}\;\text{m} = \mathbf{2{,}426\;\text{pm}}$.
+  \item \textbf{Maximální změna vlnové délky:} pro zpětný odraz $\theta = 180^\circ \Rightarrow \cos\theta = -1 \Rightarrow \Delta\lambda_{\max} = 2\lambda_C \approx \mathbf{4{,}85\;\text{pm}}$.
+\end{itemize}
+\emph{Význam:} Přímý důkaz částicové povahy a hybnosti fotonu.
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% 3. ZÁŘENÍ ABSOLUTNĚ ČERNÉHO TĚLESA (AČT)
+%=============================================================================
+\begin{tcolorbox}[secbox,title=3. ZÁŘENÍ ABSOLUTNĚ ČERNÉHO TĚLESA (AČT) A PLANCKŮV ZÁKON]
+\begin{multicols}{3}
+
+\textbf{1. Definice a emisivita povrchu $\varepsilon$}
+AČT dokonale pohlcuje veškeré dopadající záření všech vlnových délek:
+\begin{itemize}
+  \item $\mathbf{\varepsilon = 1}$: \textbf{Absolutně černé těleso} (100\% absorpce i ideální zářič).
+  \item $\mathbf{\varepsilon = 0}$: \textbf{Ideální zrcadlo} (100\% odraz, nepohlcuje nic).
+  \item $\mathbf{0 < \varepsilon < 1}$: \textbf{Reálné (šedé) těleso}.
+\end{itemize}
+\textbf{Stefanův--Boltzmannův zákon:}
+Celková plošná zářivost (plocha pod křivkou):
+\[\mathbf{M_e = \varepsilon \sigma T^4}\]
+Celkový vyzářený výkon plochou $S$:
+\[\mathbf{P = S \cdot M_e = \varepsilon \sigma S T^4}\]
+$\sigma \approx 5{,}670 \cdot 10^{-8}\;\text{W}\cdot\text{m}^{-2}\cdot\text{K}^{-4}$.\\
+Zdvojnásobení teploty ($2T$) $\Rightarrow$ výkon vzroste $\mathbf{16\times}$ ($2^4 = 16$).
+
+\columnbreak
+
+\textbf{2. Wienův posunovací zákon}
+Maximum spektrální hustoty vyzařování se s rostoucí teplotou posouvá ke kratším vlnovým délkám:
+\[\mathbf{\lambda_{\max} \cdot T = b \implies \lambda_{\max} = \frac{b}{T}}\]
+\begin{itemize}
+  \item Wienova konstanta: $\mathbf{b \approx 2{,}898 \cdot 10^{-3}\;\text{m}\cdot\text{K}}$.
+  \item \textbf{Příklad z výuky ($\lambda_{\max} = 300\;\text{nm}$):}
+  \[T = \frac{b}{\lambda_{\max}} = \frac{2{,}898 \cdot 10^{-3}}{300 \cdot 10^{-9}} = \frac{2{,}898 \cdot 10^{-3}}{3 \cdot 10^{-7}} \approx \mathbf{9\,660\;\text{K}}\]
+  (Teplota povrchu horkých hvězd třídy A, např. Vega).
+  \item Slunce ($T \approx 5778\;\text{K}$): $\lambda_{\max} \approx \frac{2{,}898 \cdot 10^{-3}}{5778} \approx \mathbf{502\;\text{nm}}$ (zelenožlutá oblast viditelného spektra).
+  \item Lidské tělo ($T \approx 310\;\text{K}$): $\lambda_{\max} \approx 9{,}35\;\mu\text{m}$ (infračervené).
+\end{itemize}
+
+\columnbreak
+
+\textbf{3. Spektrální křivky a Planckův zákon}
+\begin{itemize}
+  \item \textbf{Ultrafialová katastrofa:} Klasická fyzika (Rayleigh--Jeans) předpovídala $M_{e\lambda} \propto \frac{T}{\lambda^4} \to \infty$ pro $\lambda \to 0$.
+  \item \textbf{Planckova kvantová hypotéza (1900):} Energie oscilátorů je kvantována: $E = nh\nu$.
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55, >=stealth]
+  \draw[->, gray!70] (0,0) -- (5.2,0) node[right, black] {\tiny $\lambda$};
+  \draw[->, gray!70] (0,0) -- (0,3.3) node[above, black] {\tiny $M_{e\lambda}$};
+  % T1 nejvyšší
+  \draw[plotred, thick] plot [smooth] coordinates {(0.3,0.1) (0.9,1.5) (1.4,2.9) (2.2,1.6) (3.5,0.7) (4.8,0.3)};
+  \node[plotred] at (2.2,2.8) {\tiny $T_1$};
+  % T2 střední
+  \draw[plotblue, thick] plot [smooth] coordinates {(0.5,0.05) (1.4,0.9) (2.1,1.7) (3.0,1.0) (4.2,0.4) (4.8,0.2)};
+  \node[plotblue] at (3.0,1.7) {\tiny $T_2 < T_1$};
+  % Spojnice maxim (Wien)
+  \draw[gray!80, dashed] (1.4,2.9) .. controls (1.7,2.2) .. (2.1,1.7);
+  \node[gray!80] at (1.2,2.0) {\tiny $\lambda_{\max}\propto \frac{1}{T}$};
+\end{tikzpicture}
+\end{center}
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% 4. BOHRŮV MODEL ATOMU VODÍKU
+%=============================================================================
+\begin{tcolorbox}[secbox,title=4. BOHRŮV MODEL ATOMU VODÍKU A SPEKTRÁLNÍ PŘECHODY]
+\begin{multicols}{2}
+
+\textbf{\large 1. Postuláty a odvození}
+\begin{enumerate}
+  \item \textbf{Kvantování momentu hybnosti:}
+  Elektron obíhá pouze po stacionárních drahách:
+  \[L = m_e v r = n \hbar = n \frac{h}{2\pi} \implies \mathbf{v = \frac{nh}{2\pi m_e r}}\]
+  (Obvod dráhy $2\pi r = n\lambda_{\text{de Broglie}}$ tvoří stojatou vlnu).
+  \item \textbf{Rovnováha dostředivé a Coulombovy síly:}
+  \[m_e \frac{v^2}{r} = \frac{1}{4\pi\varepsilon_0}\frac{Ze^2}{r^2} \implies m_e v^2 r = \frac{Ze^2}{4\pi\varepsilon_0}\]
+  Dosazením rychlosti $v$ získáme poloměr $n$-té dráhy:
+  \[\mathbf{r_n = \frac{\varepsilon_0 h^2}{\pi m_e Z e^2} \cdot n^2 = a_0 \frac{n^2}{Z}}\]
+  Pro základní stav vodíku ($Z=1, n=1$): $\mathbf{a_0 \approx 0{,}053\;\text{nm}}$.
+  \item \textbf{Celková energie elektronu $E_n = E_k + E_p$:}
+  \[E_k = \frac{Ze^2}{8\pi\varepsilon_0 r}, \quad E_p = -\frac{Ze^2}{4\pi\varepsilon_0 r} \implies E_n = -\frac{Ze^2}{8\pi\varepsilon_0 r_n}\]
+  \[\mathbf{E_n = - \frac{m_e e^4 Z^2}{8\varepsilon_0^2 h^2} \cdot \frac{1}{n^2} = - \frac{13{,}6\;\text{eV}}{n^2} \cdot Z^2}\]
+\end{enumerate}
+
+\textbf{\large 2. Energetické spektrum vodíku ($Z=1$)}
+\begin{itemize}
+  \item $n=1$ (základní stav): $\mathbf{E_1 = -13{,}60\;\text{eV}}$
+  \item $n=2$ (1. excitovaný stav): $\mathbf{E_2 = -3{,}40\;\text{eV}}$
+  \item $n=3$ (2. excitovaný stav): $\mathbf{E_3 = -1{,}51\;\text{eV}}$
+  \item $n=4$: $\mathbf{E_4 = -0{,}85\;\text{eV}}, \quad n=5$: $\mathbf{E_5 = -0{,}54\;\text{eV}}$
+  \item $n \to \infty$ (ionizace): $\mathbf{E_\infty = 0\;\text{eV}}$ ($E_{\text{ion}} = 13{,}6\;\text{eV}$).
+\end{itemize}
+
+\columnbreak
+
+\textbf{\large 3. Spektrální přechody a série}
+Při deexcitaci z $n_2$ na $n_1$ ($n_2 > n_1$) se vyzáří foton:
+\[\mathbf{\Delta E = |E_{n_2} - E_{n_1}| = h\nu = \frac{hc}{\lambda}}\]
+\textbf{Rydbergova formule:}
+\[\mathbf{\frac{1}{\lambda} = R_\infty \left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)}, \qquad R_\infty \approx 1{,}097 \cdot 10^7\;\text{m}^{-1}\]
+
+\textbf{Přehled spektrálních sérií vodíku:}
+\begin{itemize}
+  \item \textbf{Lymanova ($n_1 = 1$):} $n_2 = 2, 3, \dots$ $\Rightarrow$ Ultrafialová (UV) oblast.
+  \item \textbf{Balmerova ($n_1 = 2$):} $n_2 = 3, 4, \dots$ $\Rightarrow$ Viditelné světlo (čáry $H_\alpha, H_\beta$).
+  \item \textbf{Paschenova ($n_1 = 3$):} $n_2 = 4, 5, \dots$ $\Rightarrow$ Blízká infračervená (IR) oblast.
+  \item \textbf{Brackettova ($n_1 = 4$):} Střední IR oblast.
+  \item \textbf{Pfundova ($n_1 = 5$):} Vzdálená IR oblast.
+\end{itemize}
+
+\vspace{1mm}
+\textbf{\large 4. Vzorové výpočty z testů}
+
+\textbf{Příklad 1: Čára $H_\alpha$ ($n = 3 \to 2$, Balmerova série):}
+\begin{itemize}
+  \item $\Delta E = E_3 - E_2 = -1{,}51 - (-3{,}40) = \mathbf{1{,}89\;\text{eV}}$
+  \item $\Delta E = 1{,}89 \cdot 1{,}602 \cdot 10^{-19}\;\text{J} = \mathbf{3{,}028 \cdot 10^{-19}\;\text{J}}$
+  \item Vlnová délka fotonu:
+  \[\lambda = \frac{hc}{\Delta E} = \frac{1{,}986 \cdot 10^{-25}\;\text{J}\cdot\text{m}}{3{,}028 \cdot 10^{-19}\;\text{J}} \approx \mathbf{656\;\text{nm}} \quad (\text{jasně červená})\]
+\end{itemize}
+
+\textbf{Příklad 2: Přechod z $n = 5$ na $n = 3$ (Paschenova série):}
+\begin{itemize}
+  \item $\Delta E = E_5 - E_3 = -0{,}544 - (-1{,}511) = \mathbf{0{,}967\;\text{eV}}$
+  \item $\Delta E = 0{,}967 \cdot 1{,}602 \cdot 10^{-19}\;\text{J} = \mathbf{1{,}549 \cdot 10^{-19}\;\text{J}}$
+  \item Vlnová délka fotonu:
+  \[\lambda = \frac{hc}{\Delta E} = \frac{1{,}986 \cdot 10^{-25}\;\text{J}\cdot\text{m}}{1{,}549 \cdot 10^{-19}\;\text{J}} \approx \mathbf{1282\;\text{nm}} \quad (\text{infračervená})\]
+\end{itemize}
+
+\end{multicols}
+\end{tcolorbox}
+
+%=============================================================================
+% 5. KVANTOVÁ MECHANIKA, RELACE NEURČITOSTI A ORBITALY
+%=============================================================================
+\begin{tcolorbox}[secbox,title=5. KVANTOVÁ MECHANIKA, HEISENBERGOVY RELACE NEURČITOSTI A ATOMOVÉ ORBITALY]
+\begin{multicols}{2}
+
+\textbf{\large 1. Heisenbergovy relace neurčitosti}
+Nemožnost současného přesného určení kanonicky sdružených veličin (daná nekomutativností operátorů $[\hat{x}, \hat{p}_x] = i\hbar$):
+
+\textbf{Poloha a hybnost:}
+\[\mathbf{\Delta x \cdot \Delta p_x \ge \frac{\hbar}{2} = \frac{h}{4\pi}}\]
+\begin{itemize}
+  \item Čím přesněji určíme polohu ($\Delta x \to 0$), tím méně víme o hybnosti ($\Delta p_x \to \infty$).
+  \item \textbf{Fyzikální důsledek (stabilita atomu):} Vysvětluje, proč elektron nespadne do jádra! Kdyby byl uvězněn v rozměru jádra ($\Delta x \sim 10^{-15}\;\text{m}$), jeho hybnost $\Delta p \sim \frac{\hbar}{\Delta x}$ a kinetická energie by dosáhly stovek $\text{MeV}$ a okamžitě by jádro opustil.
+\end{itemize}
+
+\textbf{Čas a energie:}
+\[\mathbf{\Delta E \cdot \Delta t \ge \frac{\hbar}{2}}\]
+\begin{itemize}
+  \item \textbf{Přirozená šířka spektrálních čar:} Excitovaný stav existuje po dobu $\Delta t \sim 10^{-8}\;\text{s} \implies$ energie stavu má rozptyl $\Delta E \ge \frac{\hbar}{2\Delta t} \implies$ spektrální čáry nejsou nekonečně ostré linie, ale mají šířku.
+  \item \textbf{Virtuální částice a vakuum:} Na kratičkých časech $\Delta t$ je možná fluktuace energie vakua o $\Delta E$ (vznik párů částice--antičástice).
+\end{itemize}
+
+\vspace{1mm}
+\textbf{\large 2. Vlnová funkce $\Psi$ a Bornova interpretace}
+Stav mikročástice je popsán vlnovou funkcí $\Psi(\vec{r}, t)$ (řešení Schrödingerovy rovnice: $i\hbar \frac{\partial \Psi}{\partial t} = \hat{H}\Psi$).
+
+\textbf{Bornova pravděpodobnostní interpretace:}
+Fyzikální význam má čtverec absolutní hodnoty:
+\[\mathbf{\rho(\vec{r}, t) = |\Psi(\vec{r}, t)|^2 = \Psi \cdot \Psi^*}\]
+\begin{itemize}
+  \item $\rho$: hustota pravděpodobnosti výskytu částice v bodě $\vec{r}$.
+  \item Pravděpodobnost nalezení částice v objemu $\mathrm{d}V$: $\mathrm{d}P = |\Psi|^2\,\mathrm{d}V$.
+  \item \textbf{Normalizační podmínka (100\% jistota výskytu):}
+  \[\int_{-\infty}^{\infty} |\Psi|^2\,\mathrm{d}V = 1\]
+\end{itemize}
+
+\columnbreak
+
+\textbf{\large 3. Kvantová čísla a prostorové orbitaly}
+Orbital je prostorová oblast kolem jádra, kde se elektron vyskytuje s vysokou pravděpodobností ($\ge 90$--$95\%$).
+
+\textbf{Čtveřice kvantových čísel jednoznačně určuje stav elektronu:}
+\begin{itemize}
+  \item \textbf{Hlavní ($n \in \{1, 2, 3, \dots\}$):}\\
+  Určuje celkovou energii hladiny a velikost orbitalu (slupky K, L, M, N...).
+  \item \textbf{Vedlejší ($l \in \{0, 1, \dots, n-1\}$):}\\
+  Určuje prostorový tvar orbitalu:
+  \begin{itemize}
+    \item $l = 0 \to \mathbf{s}$ (kulově symetrický tvar)
+    \item $l = 1 \to \mathbf{p}$ (tři prostorové osmičky $p_x, p_y, p_z$, nodální rovina v jádře)
+    \item $l = 2 \to \mathbf{d}$ (pět prostorových konfigurací)
+    \item $l = 3 \to \mathbf{f}$ (sedm prostorových konfigurací)
+  \end{itemize}
+  \item \textbf{Magnetické ($m_l \in \{-l, \dots, 0, \dots, +l\}$):}\\
+  Určuje prostorovou orientaci orbitalu vůči vnějšímu magnetickému poli ($2l+1$ možných hodnot).
+  \item \textbf{Spinové ($m_s \in \{-\frac{1}{2}, +\frac{1}{2}\}$):}\\
+  Určuje vlastní vnitřní moment hybnosti elektronu (projekci spinu).
+\end{itemize}
+
+\vspace{2mm}
+
+\begin{tcolorbox}[alertbox]
+\textbf{Pauliho vylučovací princip:}\\
+V jednom atomu nemohou existovat dva elektrony, které by měly shodnou celou sadu všech čtyř kvantových čísel ($n, l, m_l, m_s$).
+\begin{itemize}
+  \item V každém jednom prostorovém orbitalu mohou být maximálně \textbf{2 elektrony} s opačným spinem ($\uparrow\downarrow$).
+  \item Max. počet elektronů v podslupce: $\mathbf{2(2l+1)}$ ($s \to 2$, $p \to 6$, $d \to 10$, $f \to 14$).
+  \item Maximální kapacita celé $n$-té slupky: $\mathbf{2n^2}$ (pro $n=1 \to 2$, $n=2 \to 8$, $n=3 \to 18$).
+\end{itemize}
+\end{tcolorbox}
+
+\end{multicols}
+\end{tcolorbox}
+
+\end{document}

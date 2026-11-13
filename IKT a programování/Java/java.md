@@ -2,6 +2,7 @@
 
 ## Obsah
 
+- [[Kód|Kód z cvičení a ukázkové projekty]]
 - [[#1. Struktura programu|1. Struktura programu]]
 - [[#2. Proměnné a datové typy|2. Proměnné a datové typy]]
 - [[#3. Výpis do konzole (Terminál)|3. Výpis do konzole (Terminál)]]
@@ -25,6 +26,7 @@
   - [[#10.3 Základní pojmy|10.3 Základní pojmy]]
   - [[#10.4 Vytvoření nové třídy a její syntaxe|10.4 Vytvoření nové třídy a její syntaxe]]
   - [[#10.5 Atributy (Vlastnosti objektu)|10.5 Atributy (Vlastnosti objektu)]]
+  - [[#Metody instance a třídy|Metody instance a třídy]]
   - [[#10.6 Vytvoření instance a konstruktor|10.6 Vytvoření instance a konstruktor]]
   - [[#10.7 Instance vs. Odkaz (Paměťový model: Halda a Garbage Collector)|10.7 Instance vs. Odkaz (Paměťový model: Halda a Garbage Collector)]]
   - [[#10.8 Souhrnný příklad: Třída Kruh|10.8 Souhrnný příklad: Třída Kruh]]
@@ -56,10 +58,9 @@ public class Main {
 ## 2. Proměnné a datové typy
 Java je silně typový jazyk – každá proměnná musí mít předem definovaný datový typ.
 
-**Základní (primitivní) typy:**
-- `int` - celé číslo (např. `5`, `-10`)
-- `double` - desetinné číslo (např. `3.14`)
-- `float` - menší desetinné číslo, na konci nutno psát `f` (např. `3.14f`)
+**Primitivní typy:**
+- `byte`, `short`, `int`, `long` - celá čísla různých rozsahů (`long` literál lze označit `L`, např. `100L`)
+- `float`, `double` - desetinná čísla; `double` má větší rozsah a přesnost, u literálu typu `float` je nutné připojit `f` (např. `3.14f`)
 - `char` - jeden znak, píše se do jednoduchých uvozovek (např. `'A'`, `'1'`)
 - `boolean` - pravdivostní hodnota (`true` / `false`)
 
@@ -147,11 +148,12 @@ switch(V) {
         // příkazy; (spustí se, když nevyhovuje ani jeden 'case', v diagramu značeno jako '*')
 }
 ```
+Hodnoty za `case` jsou v tomto zápisu zástupné příklady; ve skutečném kódu musí jít o konstantní hodnoty vhodného typu, například `case 1:` nebo `case "ano":`.
 
 ## 6. Cykly (Loops)
 Slouží k opakovanému provedení bloku kódu.
 
-**For cyklus** (ideální, když víme předem, kolikrát se to má opakovat):
+**For cyklus** (často se používá, když víme předem, kolikrát se má opakovat):
 ```java
 // Nastavení i = 0; podmínka i < 5; krok i++ (inkrementace o 1)
 // Vypíše: 0, 1, 2, 3, 4
@@ -170,7 +172,7 @@ while (hodnota < 5) {
 ```
 
 ## 7. Pole (Arrays)
-Pevně daná paměť pro uložení vícero prvků stejného datového typu. Indexování prvků začíná od `0`.
+Struktura pevné délky, která ukládá více prvků stejného datového typu. Indexování prvků začíná od `0`.
 
 ```java
 // Vytvoření pole čísel o velikosti 5 prvků
@@ -191,9 +193,9 @@ Obsahuje základní matematické funkce a konstanty jako statické metody. Nemus
 - `Math.sqrt(double a)` – druhá odmocnina ($\sqrt{a}$)
 - `Math.pow(double a, double b)` – mocnina ($a^b$)
 - `Math.abs(x)` – absolutní hodnota ($|x|$)
-- `Math.round(x)` – zaokrouhlení na nejbližší celé číslo
-- `Math.floor(x)` – zaokrouhlení dolů
-- `Math.ceil(x)` – zaokrouhlení nahoru
+- `Math.round(x)` – zaokrouhlí na nejbližší celé číslo; pro `double` vrací `long`, pro `float` vrací `int`
+- `Math.floor(x)` – vrací největší celé číslo menší nebo rovné `x` (výsledek typu `double`)
+- `Math.ceil(x)` – vrací nejmenší celé číslo větší nebo rovné `x` (výsledek typu `double`)
 - `Math.min(a, b)` / `Math.max(a, b)` – minimum / maximum ze dvou hodnot
 - `Math.random()` – pseudonáhodné číslo z intervalu $\langle 0{,}0; 1{,}0)$
 
@@ -227,10 +229,10 @@ char b = a.charAt(2); // b = 'o'
 ### Hledání znaku nebo podřetězce
 - Pokud je prvek nalezen, výsledkem je jeho **index**.
 - Pokud prvek nalezen není, metoda vrátí **-1**.
-- `int indexOf(char nebo String znak)` – hledá zadaný znak (nebo řetězec) od začátku a vrátí index jeho prvního výskytu.
-- `int indexOf(char nebo String znak, int pozice)` – hledá zadaný znak od dané pozice a vrátí index prvního výskytu.
-- `int lastIndexOf(char nebo String znak)` – hledá poslední výskyt daného znaku (hledá od konce).
-- `int lastIndexOf(char nebo String znak, int pozice)` – hledá poslední výskyt od zadané pozice.
+- `int indexOf(int znak)` / `int indexOf(String hledany)` – hledá znak nebo podřetězec od začátku a vrátí index prvního výskytu. Znak typu `char` se předá jako `int`.
+- `int indexOf(int znak, int odIndexu)` / `int indexOf(String hledany, int odIndexu)` – hledá od zadaného indexu.
+- `int lastIndexOf(int znak)` / `int lastIndexOf(String hledany)` – vrátí index posledního výskytu.
+- `int lastIndexOf(int znak, int odIndexu)` / `int lastIndexOf(String hledany, int odIndexu)` – hledá poslední výskyt zpětně od zadaného indexu.
 
 ### Náhrada znaků
 - `String replace(char co, char čím)` – nahradí všechny výskyty zadaného znaku za nový znak.
@@ -249,14 +251,14 @@ V objektově orientovaném programování vytváříme programy, které **simulu
 ### 10.2 Základní pilíře OOP
 
 #### 1. Zapouzdření (Encapsulation)
-- Zaručuje, že objekt **nemůže přímo přistupovat dovnitř jiných objektů**, abychom ani omylem neovlivnili chod některé jeho vnitřní části.
-- Umožňuje před okolím **skrývat vnitřní stav (atributy) a pomocné metody** objektu.
+- Umožňuje skrývat vnitřní stav (atributy) a pomocné metody objektu a zpřístupnit jen kontrolované operace.
+- Díky tomu lze hlídat platnost dat a omezit nechtěné změny stavu objektu.
 - Rozdělení na dvě roviny:
-  - **Rozhraní (Interface):** Množina veřejných informací a metod, které o sobě třída zveřejní vnějšímu světu.
+  - **Veřejné rozhraní (API):** Množina veřejných informací a metod, které třída zpřístupní okolí. Neznamená to nutně Java konstrukci `interface`.
   - **Implementace:** Konkrétní způsob vnitřního naprogramování skrytý před vnějším zásahem.
 
 #### 2. Dědičnost (Inheritance)
-- Vytváříme nové třídy (**potomky**) tak, aby zdědily všechny vlastnosti a schopnosti předka (**rodiče**) a přidaly k nim své vlastní specifické chování nebo vlastnosti.
+- Vytváříme nové třídy (**potomky**) tak, aby převzaly dostupné chování a stav předka (**rodiče**) a přidaly nebo upravily své vlastní. Soukromé členy předka nejsou potomkovi přímo přístupné a konstruktory se nedědí.
 - V Javě se dědí pomocí klíčového slova `extends`.
 - **Příklad:** `Hodiny` (rodič / předek) $\rightarrow$ `Budik` (potomek, který dědí měření času a přidává funkci buzení / zvonění).
 
@@ -294,6 +296,8 @@ public class NazevTridy {
 - **Modifikátor přístupu:** Určuje, kdo smí s třídou / prvkem pracovat:
   - `public` – veřejný přístup (odkudkoliv).
   - `private` – soukromý přístup (pouze zevnitř dané třídy – základ zapouzdření).
+  - `protected` – přístup v rámci balíčku a v potomcích podle pravidel Javy.
+  - Bez modifikátoru se používá přístup v rámci stejného balíčku (package-private).
 - **`class`:** Klíčové slovo deklarující třídu.
 - **Identifikátor (Název třídy):**
   - Podléhá konvenci **PascalCase** (začíná velkým písmenem, např. `MojeTrida`, `Kruh`).
@@ -315,6 +319,69 @@ Atributy jsou proměnné definované uvnitř třídy, které popisují stav obje
 
 ---
 
+### Metody instance a třídy
+
+Metoda popisuje chování třídy. Její hlavička určuje přístup, případně `static`, návratový typ, název a parametry:
+
+```java
+modifikatorPristupu [static] navratovyTyp nazevMetody(parametry) {
+    // tělo metody
+}
+```
+
+- `public` zpřístupní metodu z míst, odkud je její třída dostupná; `private` ji zpřístupní pouze uvnitř stejné třídy.
+- Návratový typ může být datový typ, například `int`, nebo `void`, pokud metoda žádnou hodnotu nevrací.
+- Parametry jsou vstupní hodnoty metody. Typy argumentů při volání musí odpovídat parametrům (případně se použije povolená konverze).
+- Metoda instance pracuje s konkrétním objektem. Volá se přes odkaz na instanci; může používat jeho atributy.
+- Metoda třídy je označena `static` a volá se typicky přes název třídy. Nemá `this`; k atributům instance proto nemůže přistupovat přímo, ale pouze přes výslovný odkaz na konkrétní objekt.
+
+Metoda, která vrací hodnotu, ji před skončením vrátí příkazem `return`. Vrácená hodnota musí odpovídat návratovému typu. Metoda `void` hodnotu nevrací; může skončit i příkazem `return;`.
+
+```java
+public class Bod {
+    private int x;
+
+    public void setX(int hodnota) {
+        this.x = hodnota;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public static int vynasob(int a, int b) {
+        return a * b;
+    }
+}
+```
+
+`this` označuje aktuální instanci. V `this.x = hodnota` je vlevo atribut objektu a vpravo parametr metody. Uvnitř instance metody lze často psát jen `x`; `this` je užitečné pro jednoznačnost nebo pro volání jiné instance metody (`this.getX()`).
+
+Metodu lze podle kontextu volat různým způsobem:
+
+```java
+Bod bod = new Bod();
+bod.setX(7);                     // metoda instance: přes odkaz na instanci
+int x = bod.getX();
+int vysledek = Bod.vynasob(3, 4); // statická metoda: přes název třídy
+```
+
+Uvnitř stejné třídy lze metodu volat i bez kvalifikace; `this.metoda()` výslovně označuje volání metody aktuální instance. Statickou metodu lze uvnitř její třídy volat přímo nebo s kvalifikací názvem třídy.
+
+**Přístupové metody (gettery a settery):** Atributy bývají často `private`; getter hodnotu zpřístupní a setter ji nastaví, případně před uložením zkontroluje. Běžná konvence je `getX()` a `setX(...)`; pro získání hodnoty typu `boolean` se často používá `isX()`. Jde o konvenci pojmenování, nikoli zvláštní syntaxi jazyka.
+
+```java
+private int x;
+
+public void setX(int hodnota) {
+    x = hodnota;
+}
+
+public int getX() {
+    return x;
+}
+```
+
 ### 10.6 Vytvoření instance a konstruktor
 
 Instanci třídy vytváříme zavoláním speciální metody zvané **konstruktor** pomocí operátoru **`new`**:
@@ -326,23 +393,24 @@ Kruh k = new Kruh(3);
 ```
 
 - **Konstruktor:** Speciální metoda třídy, která se jmenuje stejně jako třída, nemá žádný návratový typ (ani `void`) a slouží k inicializaci nově vytvořeného objektu.
-- **Co konstruktor udělá:** Vytvoří instanci v dynamické paměti a **vrátí odkaz (referenci)**, pomocí kterého s instancí dále v programu pracujeme.
+- **Co se děje při vytvoření instance:** Výraz `new Kruh(3)` vytvoří objekt, zavolá konstruktor a jako celek poskytne odkaz (referenci) na nový objekt. Samotný konstruktor nemá návratový typ a žádnou hodnotu nevrací.
+- Pokud třída nemá deklarovaný žádný konstruktor, Java jí automaticky poskytne bezparametrický konstruktor. Jakmile autor deklaruje vlastní konstruktor, tento automatický se už nevytvoří.
 
 ---
 
 ### 10.7 Instance vs. Odkaz (Paměťový model: Halda a Garbage Collector)
 
-V Javě se striktně rozlišuje mezi samotným objektem a odkazem na něj:
+V běžném vysvětlujícím modelu rozlišujeme samotný objekt a odkaz na něj:
 
-1. **Uložení v paměti (Halda vs. Zásobník):**
-   - **Instance (Objekt):** Je fyzicky alokována v dynamické paměti zvané **halda (heap)**.
-   - **Odkaz (Reference):** Proměnná (např. `k`), která je uložena na **zásobníku (stack)** a obsahuje pouze adresu / ukazatel na místo v haldě, kde se skutečný objekt nachází.
+1. **Objekt a odkaz:**
+   - Objekt vytvořený pomocí `new` je v běžném modelu uložen na **haldě (heap)**.
+   - Proměnná referenčního typu obsahuje odkaz na objekt. Místní proměnné se obvykle vysvětlují jako uložené na **zásobníku (stack)**, ale konkrétní umístění a reprezentaci určuje JVM a může je optimalizovat.
 
 2. **Správa paměti a Garbage Collector (GC):**
-   - O haldu se stará automatický správce paměti JVM – **Garbage Collector (GC)**. Nikdo jiný do přímé správy haldy nemá přístup.
+   - Paměť pro objekty spravuje JVM; **Garbage Collector (GC)** automaticky uvolňuje objekty, které už program nemůže dosáhnout.
    - **Funkce GC:**
-     - **Přiděluje paměť** nově vznikajícím objektům při volání `new`.
-     - **Automaticky ruší nepotřebné objekty** a uvolňuje paměť – jakmile na objekt v haldě již nevede žádný aktivní odkaz (např. proměnná zanikla nebo byla nastavena na `null`), GC tento objekt z haldy bezpečně odstraní.
+     - Při volání `new` JVM zajistí paměť pro nový objekt.
+     - GC může uvolnit objekt, který už není dosažitelný z aktivních částí programu. Nestačí pouze to, že na něj neukazuje jedna proměnná; objekt může být dosažitelný jinou cestou. Uvolnění proběhne automaticky, ale jeho okamžik není zaručen.
 
 ---
 
@@ -520,6 +588,8 @@ Pokud kompilátor nenajde přesnou shodu v datových typech parametrů, zkusí p
 
 $$\text{byte} \rightarrow \text{short} \rightarrow \text{int} \rightarrow \text{long} \rightarrow \text{float} \rightarrow \text{double}$$
 
+`char` se při rozšiřující číselné konverzi převádí na `int` (a dále na větší typy); `short` a `char` nejsou navzájem přímo převoditelné. Jde o zjednodušené pořadí běžných číselných rozšíření, ne o tvrzení, že každý další typ má vždy vyšší přesnost.
+
 **Příklad:**
 ```java
 public class Test {
@@ -545,4 +615,3 @@ public class Test {
 > **Nejednoznačné volání (Ambiguous Method Call):**
 > Pokud kompilátor nedokáže jednoznačně určit, která přetížená metoda má přednost (např. kvůli kombinaci implicitních konverzí nebo varargs), zahlásí chybu:
 > `reference to ... is ambiguous, both method ... match`. V takovém případě je nutné parametr explicitně přetypovat, např. `metoda((double) x)`.
-

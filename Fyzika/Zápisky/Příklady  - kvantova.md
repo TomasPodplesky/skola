@@ -1,0 +1,1 @@
+kolik energie se uvolní z 5 na 3
